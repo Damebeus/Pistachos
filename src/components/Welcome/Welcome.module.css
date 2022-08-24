@@ -1,0 +1,15 @@
+.container {
+  /* background-color: teal; */
+  height: 90vh;
+}
+.subcontainer {
+  height: 86vh;
+  margin-top: 4vh;
+  background-image: url("./bgpizza.jpg");
+  background-size: cover;
+}
+.titulo {
+  display: flex;
+  justify-content: center;
+  font-family: "Merienda", cursive;
+}
