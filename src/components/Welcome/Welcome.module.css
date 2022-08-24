@@ -39,7 +39,7 @@
   border-bottom: 2px solid rgb(88, 248, 173);
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1566px) {
   .titulo h1 {
     color: rgb(88, 248, 173);
     margin-top: 60vh;
