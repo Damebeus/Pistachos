@@ -38,3 +38,18 @@
 .subtitulo a:hover {
   border-bottom: 2px solid rgb(88, 248, 173);
 }
+
+@media screen and (max-width: 1366px) {
+  .titulo h1 {
+    color: rgb(88, 248, 173);
+    margin-top: 60vh;
+    font-size: 4rem;
+    text-shadow: rgb(255, 255, 255) 1px 3px;
+  }
+  .subtitulo p {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: -35px;
+  }
+}
