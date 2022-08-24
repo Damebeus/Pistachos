@@ -1,0 +1,31 @@
+.container {
+  width: 100vw;
+  height: 4vh;
+  background-color: #000000c5;
+  position: fixed;
+  z-index: 100000000;
+  top: 0px;
+}
+.subcontainer {
+  width: 50%;
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d5d8dc;
+}
+.subcontainer p {
+  font-size: 14px;
+}
+.direccion {
+  margin-left: 10px;
+  margin-right: 40px;
+}
+.numero {
+  margin-left: 10px;
+  margin-right: 40px;
+}
+.correo {
+  margin-left: 10px;
+  margin-right: 10px;
+}
