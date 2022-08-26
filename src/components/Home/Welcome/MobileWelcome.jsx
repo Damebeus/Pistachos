@@ -19,7 +19,7 @@ const MobileWelcome = () => {
         <h2>¡Productos de primera calidad!</h2>
       </div>
       <div className={style.boton}>
-        <Link to='/home'>
+        <Link to='/listado'>
           <button>Realizar pedido</button>
         </Link>
       </div>
