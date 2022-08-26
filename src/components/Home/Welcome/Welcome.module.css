@@ -1,9 +1,10 @@
 .container {
-  /* background-color: teal; */
-  height: 90vh;
+  /*   background-color: teal; */
+  height: 80vh;
 }
+
 .subcontainer {
-  height: 86vh;
+  height: 76vh;
   margin-top: 4vh;
   background-image: url("./bgpizza.jpg");
   background-size: cover;
@@ -17,9 +18,10 @@
 }
 .titulo h1 {
   color: rgb(88, 248, 173);
-  margin-top: 60vh;
+  margin-top: 40vh;
   font-size: 6rem;
   text-shadow: rgb(255, 255, 255) 1px 3px;
+  backdrop-filter: blur(2px);
 }
 .subtitulo {
   display: flex;
@@ -29,7 +31,8 @@
   color: rgb(255, 255, 255);
   font-size: 1.4rem;
   margin: 0;
-  margin-top: -20px;
+  margin-top: -2px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .subtitulo a {
   color: rgb(88, 248, 173);

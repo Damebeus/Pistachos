@@ -1,0 +1,85 @@
+@media screen and (max-width: 414px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-height: 880px;
+    max-width: 414px;
+    background-image: url("./bgi.png");
+    background-size: cover;
+  }
+  .bgi {
+    position: absolute;
+  }
+  .titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 10%;
+    font-family: "Merienda", cursive;
+  }
+  .subtitulo {
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: monospace;
+    margin-top: 50px;
+  }
+  .imagen {
+    text-align: center;
+    margin-bottom: -50px;
+  }
+  .imagen img {
+    height: 300px;
+    width: 300px;
+  }
+  .boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 35%;
+  }
+  .boton button {
+    background-color: #a7c71c;
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    animation: flash 1.8s infinite;
+  }
+
+  .animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes flash {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0.7;
+    }
+  }
+  @keyframes flash {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0.7;
+    }
+  }
+  .flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+  }
+}
