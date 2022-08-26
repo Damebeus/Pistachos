@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Promociones() {
-  return (
-    <div>Promociones</div>
-  )
+  return <div></div>;
 }
 
-export default Promociones
+export default Promociones;
