@@ -1,18 +1,18 @@
 import React from 'react'
 import data from '../../../data/data'
 import CardInfo from '../../CardInfo/CardInfo'
-function Bebidas() {
-  
-  const filtrado = data.filter(function (a) { return a.category === 'Bebidas'})
 
-  const addToCart = () =>{}
+function Milanesas() {
+
+  const filtrado = data.filter(function (e) {return e.category === 'sandwich'})
+
 
   return (
     <div>
       {
         filtrado && (
           <div>
-            <h1>Bebidas</h1>
+            <h1>Sandwichs</h1>
             <div>
               {
                 filtrado.map(function (item){
@@ -24,7 +24,6 @@ function Bebidas() {
                         description={item.description}
                         price={item.price}
                         item={item}
-                        addToCart={addToCart}
                       />
                     </div>
                   )
@@ -38,4 +37,4 @@ function Bebidas() {
   )
 }
 
-export default Bebidas
+export default Milanesas
