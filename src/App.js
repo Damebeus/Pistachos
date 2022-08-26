@@ -3,6 +3,7 @@ import Home from "./components/Home/Home";
 import MobileWelcome from "./components/Home/Welcome/MobileWelcome";
 import Welcome from "./components/Home/Welcome/Welcome";
 import ProductList from "./components/ProductList/ProductList";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route exact path='/' component={MobileWelcome} />
           <Route exact path='/home' component={Home} />
           <Route path='/listado' component={ProductList} />
+          <Route path='/cart' component={Cart} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -2,17 +2,17 @@ import React from 'react'
 import data from '../../../data/data'
 import CardInfo from '../../CardInfo/CardInfo'
 
-function Empanadas() {
+function Lomo() {
 
-  const filtrado = data.filter(function (e) {return e.category === 'empanadas'})
+    const filtrado = data.filter(function (e) {return e.category === 'Lomo'})
   
-  
-  return (
+
+    return (
     <div>
       {
         filtrado && (
           <div>
-              <h1>Empanadas</h1>
+              <h1>Lomos</h1>
               <div>
                 {
                   filtrado.map(function (item){
@@ -37,4 +37,4 @@ function Empanadas() {
   )
 }
 
-export default Empanadas
+export default Lomo
