@@ -8,6 +8,7 @@
     background-image: url("./bgw.jpg");
     background-size: cover;
     position: relative;
+    overflow: hidden;
   }
   .bgi {
     position: absolute;
@@ -47,6 +48,7 @@
     display: flex;
     justify-content: center;
     margin-top: 10%;
+    margin-bottom: 20%;
   }
   .boton button {
     background-color: #a7c71c;
@@ -95,6 +97,5 @@
   .footer img {
     overflow: hidden;
     max-width: 414px;
-    margin-top: 40px;
   }
 }
