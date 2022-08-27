@@ -5,51 +5,51 @@ function Promociones() {
   return (
     <Carousel>
       <Carousel.Item>
-        <div className={style.container}>
+        <div className={style.containerr}>
           <img
             className='d-block w-100'
             src='https://www.comedera.com/wp-content/uploads/2021/06/sandwich-de-milanesa.jpg'
             alt='First slide'
-            height='200'
+            height='220'
           />
           <Carousel.Caption>
-            <div className={style.titulo}>
+            <div className={style.tituloo}>
               <h3>Sanguche de Milanesa</h3>
-              <p>Carne de ternera de primerisima calidad.</p>
+              {/*              <p>Carne de ternera de primerisima calidad.</p> */}
             </div>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <div className={style.container}>
+        <div className={style.containerr}>
           <img
             className='d-block w-100'
             src='https://kingshawaiian.cl/img/home/recetas/hamburguesa/hamburguesa_doble.png'
             alt='Second slide'
-            height='200'
+            height='220'
           />
 
           <Carousel.Caption>
-            <div className={style.titulo}>
+            <div className={style.tituloo}>
               <h3>Hamburguesa con cheddar</h3>
-              <p>No existe hamburguesa mas rica que esta, diosssss.</p>
+              {/*         <p>No existe hamburguesa mas rica que esta, diosssss.</p> */}
             </div>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <div className={style.container}>
+        <div className={style.containerr}>
           <img
             className='d-block w-100'
             src='https://cl-mycooktouch.group-taurus.com/image/recipe/540x391/fugazzeta'
             alt='Third slide'
-            height='200'
+            height='220'
           />
 
           <Carousel.Caption>
-            <div className={style.titulo}>
-              <h3>Pizza fugazza</h3>
-              <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p>
+            <div className={style.tituloo}>
+              <h3>Pizza fugazzeta</h3>
+              {/*    <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p> */}
             </div>
           </Carousel.Caption>
         </div>
