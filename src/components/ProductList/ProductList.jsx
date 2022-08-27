@@ -19,10 +19,12 @@ function ProductList() {
   if (isLoading) return <h1>...Loading</h1>;
   return (
     <div className={style.background}>
-      <div>
+      <div className={style.titulo}>
         <img src='' alt='' />
-        <h1>Name</h1>
-        <Searchbar />
+        <h1>Pistachos</h1>
+        <div className={style.search}>
+          <Searchbar />
+        </div>
       </div>
       <div className={style.carrusel}>
         <Promociones />
