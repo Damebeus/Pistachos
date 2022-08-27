@@ -1,32 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from "../../../data/data";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { getBebidas } from "../../../redux/action";
 function Bebidas() {
-  const filtrado = data.filter(function (a) {
-    return a.category === "Bebidas";
-  });
-
-  const addToCart = () => {};
+  const dispatch = useDispatch()
+  const products = useSelector((state) => state.bebidas);
+  
+  useEffect(() => {
+    dispatch(getBebidas())
+  },[dispatch])
 
   return (
     <div>
-      {filtrado && (
+      {products && (
         <div>
           <div className={style.titulo}>
             <h1>Bebidas</h1>
           </div>
           <div>
-            {filtrado.map(function (item) {
+            {products.map(function (item) {
               return (
                 <div key={item.id}>
                   <CardInfo
-                    img={item.img}
+                    img={item.image}
                     name={item.name}
                     description={item.description}
                     price={item.price}
-                    item={item}
-                    addToCart={addToCart}
+                    
                   />
                 </div>
               );

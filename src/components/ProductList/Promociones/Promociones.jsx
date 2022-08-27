@@ -1,60 +1,37 @@
-import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import style from "./Promociones.module.css";
+import React, { useEffect, useState } from "react";
+import { getEmpanadas, getPromo } from "../../../redux/action";
+import CardInfo from "../../CardInfo/CardInfo";
+import style from "../Products.module.css";
+import { useSelector, useDispatch } from "react-redux";
 function Promociones() {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.promos);
+  
+  useEffect(() => {
+    dispatch(getPromo());
+  }, [dispatch]);
   return (
-    <Carousel>
-      <Carousel.Item>
-        <div className={style.containerr}>
-          <img
-            className='d-block w-100'
-            src='https://www.comedera.com/wp-content/uploads/2021/06/sandwich-de-milanesa.jpg'
-            alt='First slide'
-            height='220'
-          />
-          <Carousel.Caption>
-            <div className={style.tituloo}>
-              <h3>Sanguche de Milanesa</h3>
-              {/*              <p>Carne de ternera de primerisima calidad.</p> */}
-            </div>
-          </Carousel.Caption>
+    <div className={style.container}>
+      {products && (
+        <div>
+          <div className={style.titulo}>
+            <h1>Empanadas</h1>
+          </div>
+          <div>
+            {products.map((product) => {
+              return (
+                <CardInfo
+                  key={product.id}
+                  img={product.image}
+                  name={product.name}
+                  price={product.price}
+                />
+              );
+            })}
+          </div>
         </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className={style.containerr}>
-          <img
-            className='d-block w-100'
-            src='https://kingshawaiian.cl/img/home/recetas/hamburguesa/hamburguesa_doble.png'
-            alt='Second slide'
-            height='220'
-          />
-
-          <Carousel.Caption>
-            <div className={style.tituloo}>
-              <h3>Hamburguesa con cheddar</h3>
-              {/*         <p>No existe hamburguesa mas rica que esta, diosssss.</p> */}
-            </div>
-          </Carousel.Caption>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className={style.containerr}>
-          <img
-            className='d-block w-100'
-            src='https://cl-mycooktouch.group-taurus.com/image/recipe/540x391/fugazzeta'
-            alt='Third slide'
-            height='220'
-          />
-
-          <Carousel.Caption>
-            <div className={style.tituloo}>
-              <h3>Pizza fugazzeta</h3>
-              {/*    <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p> */}
-            </div>
-          </Carousel.Caption>
-        </div>
-      </Carousel.Item>
-    </Carousel>
+      )}
+    </div>
   );
 }
 
