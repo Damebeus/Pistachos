@@ -5,6 +5,7 @@ import style from "./CardInfo.module.css"
 function CardInfo({ img,name,price,description }) {
   const [cart,setCart] = useState([])
 
+
   const dispatch = useDispatch();
 
   function addToCart(id) {
