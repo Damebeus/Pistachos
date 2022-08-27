@@ -12,6 +12,7 @@ import BigB from "./BigB/BigB";
 import Cart from "../Cart/Cart";
 import style from "./ProductList.module.css";
 import Carrousel from "./Carrousel/Carrousel";
+import Promociones from "./Promociones/Promociones";
 
 function ProductList() {
   const { isLoading } = useAuth0;
@@ -26,7 +27,7 @@ function ProductList() {
       </div>
       <div className={style.container}>
         <Carrousel />
-        <Destacados />
+        <Promociones/>
         <Empanadas />
         <Pizza />
         <Milanesas />
