@@ -1,27 +1,27 @@
 import React from "react";
 import style from "./MobileWelcome.module.css";
 import { Link } from "react-router-dom";
-import logo from "./logopista.png";
-import bg from "./bgi.png";
+import logo from "./logoHoja.png";
+import titulo from "./titulo.png";
+import down from "./footer.png";
 const MobileWelcome = () => {
   return (
     <div className={style.container}>
-      {/*     <div className={style.bgi}>
-        <img src={bg} alt='' />
-      </div> */}
+      <div className={style.imagen}>{<img src={logo} alt='' />}</div>
       <div className={style.titulo}>
-        <h1>Pistachos</h1>
-      </div>
-      <div className={style.imagen}>
-        <img src={logo} alt='' />
+        <img src={titulo} alt='' />
+        {/*    <h1>Pistachos</h1> */}
       </div>
       <div className={style.subtitulo}>
-        <h2>¡Productos de primera calidad!</h2>
+        <h2>MENU</h2>
       </div>
       <div className={style.boton}>
         <Link to='/listado'>
           <button>Realizar pedido</button>
         </Link>
+      </div>
+      <div className={style.footer}>
+        <img src={down} alt='' />
       </div>
     </div>
   );
