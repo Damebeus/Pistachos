@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 function Promociones() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.promos);
-  
+
   useEffect(() => {
     dispatch(getPromo());
   }, [dispatch]);
