@@ -6,9 +6,4 @@
     font-family: "Merienda", cursive;
     border-bottom: 1px solid rgb(0, 0, 0);
   }
-  .card {
-    margin: 20px;
-    border-radius: 20px;
-    background-color: yellowgreen;
-  }
 }
