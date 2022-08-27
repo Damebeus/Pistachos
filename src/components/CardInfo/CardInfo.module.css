@@ -1,0 +1,47 @@
+@media screen and (max-width: 414px) {
+  .container {
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 9px 5px rgba(0, 0, 0, 0.29);
+    height: 170px;
+  }
+  .subContainer {
+    display: flex;
+  }
+  .columna {
+    display: flex;
+    flex-direction: column;
+    /*     background-color: aqua; */
+    width: 60%;
+    height: 170px;
+  }
+  .columna h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .columna p {
+    margin: 0;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .columna span {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .columna button {
+    position: absolute;
+    width: 150px;
+    margin-left: 10px;
+    margin-top: 140px;
+    border-radius: 20px;
+  }
+
+  .imagen img {
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+}
