@@ -1,31 +1,31 @@
-import React from "react";
-import data from "../../../data/data";
+import React, { useEffect, useState } from "react";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { getMilanesas } from "../../../redux/action";
 function Milanesas() {
-  const filtrado = data.filter(function (e) {
-    return e.category === "sandwich";
-  });
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.milanesas);
 
+  useEffect(() => {
+    dispatch(getMilanesas());
+  }, [dispatch]);
   return (
     <div>
-      {filtrado && (
+      {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Sandwich</h1>
+            <h1>Milanesas</h1>
           </div>
           <div>
-            {filtrado.map(function (item) {
+            {products.map((product) => {
               return (
-                <div key={item.id}>
-                  <CardInfo
-                    img={item.img}
-                    name={item.name}
-                    description={item.description}
-                    price={item.price}
-                    item={item}
-                  />
-                </div>
+                <CardInfo
+                  key={product.id}
+                  img={product.image}
+                  name={product.name}
+                  price={product.price}
+                />
               );
             })}
           </div>
