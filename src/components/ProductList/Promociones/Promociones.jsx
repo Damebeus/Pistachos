@@ -49,10 +49,7 @@ function Promociones() {
           <Carousel.Caption>
             <div className={style.titulo}>
               <h3>Pizza fugazza</h3>
-              <p>
-                Pizza de base sencilla con cebolla y un poco de parmesano, pero
-                sin mozzarella.
-              </p>
+              <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p>
             </div>
           </Carousel.Caption>
         </div>
