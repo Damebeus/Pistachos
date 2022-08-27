@@ -18,7 +18,7 @@ function ProductList() {
 
   if (isLoading) return <h1>...Loading</h1>;
   return (
-    <div>
+    <div className={style.background}>
       <div>
         <img src='' alt='' />
         <h1>Name</h1>
