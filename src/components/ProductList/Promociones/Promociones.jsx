@@ -15,7 +15,7 @@ function Promociones() {
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Empanadas</h1>
+            <h1>Promociones</h1>
           </div>
           <div>
             {products.map((product) => {
