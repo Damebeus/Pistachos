@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     min-height: 667px;
-    max-height: 896px;
+    max-height: 880px;
     max-width: 414px;
     background-image: url("./bgw.jpg");
     background-size: cover;
