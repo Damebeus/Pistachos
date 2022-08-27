@@ -1,39 +1,42 @@
-import React from 'react'
-import data from '../../../data/data'
-import CardInfo from '../../CardInfo/CardInfo'
+import React, { useEffect, useState } from "react";
+import CardInfo from "../../CardInfo/CardInfo";
+import style from "../Products.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { getHamburguesas } from "../../../redux/action";
 function Hamburguesas() {
-
-    const filtrado = data.filter(function (e) {return e.category === 'hamburguesas'})
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.hamburguesas);
   
+  useEffect(() => {
+    dispatch(getHamburguesas());
+  }, [dispatch]);
 
-    return (
+  return (
     <div>
-      {
-        filtrado && (
-          <div>
-              <h1>Hamburguesas</h1>
-              <div>
-                {
-                  filtrado.map(function (item){
-                    return (
-                      <div key={item.id}>
-                        <CardInfo
-                          img={item.img}
-                          name={item.name}
-                          description={item.description}
-                          price={item.price}
-                          item={item}
-                          />
-                      </div>
-                    )
-                  })
-                }
-              </div>
+      {products && (
+        <div>
+          <div className={style.titulo}>
+            <h1>Hamburguesas</h1>
           </div>
-        )
-      }
+          <div>
+            {products.map(function (item) {
+              return (
+                <div key={item.id}>
+                  <CardInfo
+                    img={item.image}
+                    name={item.name}
+                    description={item.description}
+                    price={item.price}
+                    item={item}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Hamburguesas
+export default Hamburguesas;

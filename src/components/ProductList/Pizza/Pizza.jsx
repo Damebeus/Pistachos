@@ -1,41 +1,40 @@
-import React from 'react'
-import data from '../../../data/data'
-import CardInfo from '../../CardInfo/CardInfo'
-
+import React, { useEffect, useState } from "react";
+import { getPizzas } from "../../../redux/action";
+import CardInfo from "../../CardInfo/CardInfo";
+import style from "../Products.module.css";
+import { useDispatch, useSelector } from "react-redux";
 function Pizza() {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.pizzas)
 
-  const filtrado = data.filter(function (e) {return e.category === 'pizza'})
+  useEffect(() => {
+    dispatch(getPizzas());
+  }, [dispatch]);
 
-
-
+  console.log(products)
   return (
     <div>
-      {
-        filtrado && (
-          <div>
+      {products && (
+        <div>
+          <div className={style.titulo}>
             <h1>Pizzas</h1>
-            <div>
-              {
-                filtrado.map(function (item){
-                  return (
-                    <div key={item.id}>
-                      <CardInfo
-                        img={item.img}
-                        name={item.name}
-                        description={item.description}
-                        price={item.price}
-                        item={item}
-                      />
-                    </div>
-                  )
-                })
-              }
-            </div>
           </div>
-        )
-      }
+          <div>
+            {products.map((product) => {
+              return (
+                <CardInfo
+                  key={product.id}
+                  img={product.image}
+                  name={product.name}
+                  price={product.price}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Pizza
+export default Pizza;

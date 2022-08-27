@@ -11,6 +11,7 @@ import Lomo from "./Lomo/Lomo";
 import Hamburguesas from "./Hamburguesas/Hamburguesas";
 import BigB from "./BigB/BigB";
 import Cart from "../Cart/Cart";
+import style from "./ProductList.module.css";
 
 function ProductList() {
   const { isLoading } = useAuth0;
@@ -23,16 +24,14 @@ function ProductList() {
         <h1>Name</h1>
         <Searchbar />
       </div>
-
-      {/* <Promociones />
-      <Destacados /> */}
+      <Promociones/>
       <Empanadas />
-      {/* <Pizza />
+       <Pizza />
       <Milanesas />
       <Lomo />
       <Hamburguesas />
-      <BigB />
-      <Bebidas /> */}
+      {/*<BigB />*/}
+      <Bebidas /> 
     </div>
   );
 }

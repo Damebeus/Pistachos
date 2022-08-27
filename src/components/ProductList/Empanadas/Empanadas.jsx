@@ -6,11 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 function Empanadas() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.empanadas);
-
+  
   useEffect(() => {
     dispatch(getEmpanadas());
   }, [dispatch]);
-  console.log(products, "hola soy yo");
   return (
     <div className={style.container}>
       {products && (

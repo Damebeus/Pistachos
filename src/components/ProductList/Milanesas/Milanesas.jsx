@@ -1,40 +1,38 @@
-import React from 'react'
-import data from '../../../data/data'
-import CardInfo from '../../CardInfo/CardInfo'
-
+import React, { useEffect, useState } from "react";
+import CardInfo from "../../CardInfo/CardInfo";
+import style from "../Products.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { getMilanesas } from "../../../redux/action";
 function Milanesas() {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.milanesas);
 
-  const filtrado = data.filter(function (e) {return e.category === 'sandwich'})
-
-
+  useEffect(() => {
+    dispatch(getMilanesas());
+  }, [dispatch]);
   return (
     <div>
-      {
-        filtrado && (
-          <div>
-            <h1>Sandwichs</h1>
-            <div>
-              {
-                filtrado.map(function (item){
-                  return (
-                    <div key={item.id}>
-                      <CardInfo
-                        img={item.img}
-                        name={item.name}
-                        description={item.description}
-                        price={item.price}
-                        item={item}
-                      />
-                    </div>
-                  )
-                })
-              }
-            </div>
+      {products && (
+        <div>
+          <div className={style.titulo}>
+            <h1>Milanesas</h1>
           </div>
-        )
-      }
+          <div>
+            {products.map((product) => {
+              return (
+                <CardInfo
+                  key={product.id}
+                  img={product.image}
+                  name={product.name}
+                  price={product.price}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Milanesas
+export default Milanesas;
