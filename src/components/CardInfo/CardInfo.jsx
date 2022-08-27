@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { AddToCart } from "../../redux/action";
 import { useDispatch } from "react-redux";
 import style from "./CardInfo.module.css";

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getEmpanadas, getPromo } from "../../../redux/action";
 import CardInfo from "../../CardInfo/CardInfo";
-import style from "../Products.module.css";
 import { useSelector, useDispatch } from "react-redux";
 function Promociones() {
   const dispatch = useDispatch();
@@ -11,10 +10,10 @@ function Promociones() {
     dispatch(getPromo());
   }, [dispatch]);
   return (
-    <div className={style.container}>
+    <div>
       {products && (
         <div>
-          <div className={style.titulo}>
+          <div >
             <h1>Promociones</h1>
           </div>
           <div>
