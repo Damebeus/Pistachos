@@ -2,36 +2,46 @@
   .container {
     display: flex;
     flex-direction: column;
+    min-height: 667px;
     max-height: 880px;
     max-width: 414px;
-    background-image: url("./bgi.png");
+    background-image: url("./bgw.jpg");
     background-size: cover;
+    position: relative;
   }
   .bgi {
     position: absolute;
   }
   .titulo {
-    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 15%;
+  }
+  .titulo img {
+    max-width: 350px;
+    /*     font-size: 1.5rem;
     font-weight: bold;
     color: rgb(0, 0, 0);
     text-align: center;
     margin-top: 10%;
-    font-family: "Merienda", cursive;
+    font-family: "Merienda", cursive; */
   }
-  .subtitulo {
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
+  .subtitulo h2 {
+    font-size: 5.5rem;
+    font-weight: bold;
+    color: #ffb127;
     text-align: center;
-    font-family: monospace;
+    margin-top: 10%;
+    font-family: "Segoe UI";
+    font-weight: bold;
     margin-top: 50px;
   }
   .imagen {
-    text-align: center;
+    text-align: flex-start;
     margin-bottom: -50px;
   }
   .imagen img {
-    height: 300px;
-    width: 300px;
+    height: 110px;
+    width: 140px;
   }
   .boton {
     display: flex;
@@ -81,5 +91,8 @@
   .flash {
     -webkit-animation-name: flash;
     animation-name: flash;
+  }
+  .footer {
+    overflow: hidden;
   }
 }
