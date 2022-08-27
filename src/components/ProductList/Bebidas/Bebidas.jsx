@@ -1,41 +1,41 @@
-import React from 'react'
-import data from '../../../data/data'
-import CardInfo from '../../CardInfo/CardInfo'
+import React from "react";
+import data from "../../../data/data";
+import CardInfo from "../../CardInfo/CardInfo";
+import style from "../Products.module.css";
 function Bebidas() {
-  
-  const filtrado = data.filter(function (a) { return a.category === 'Bebidas'})
+  const filtrado = data.filter(function (a) {
+    return a.category === "Bebidas";
+  });
 
-  const addToCart = () =>{}
+  const addToCart = () => {};
 
   return (
     <div>
-      {
-        filtrado && (
-          <div>
+      {filtrado && (
+        <div>
+          <div className={style.titulo}>
             <h1>Bebidas</h1>
-            <div>
-              {
-                filtrado.map(function (item){
-                  return (
-                    <div key={item.id}>
-                      <CardInfo
-                        img={item.img}
-                        name={item.name}
-                        description={item.description}
-                        price={item.price}
-                        item={item}
-                        addToCart={addToCart}
-                      />
-                    </div>
-                  )
-                })
-              }
-            </div>
           </div>
-        )
-      }
+          <div>
+            {filtrado.map(function (item) {
+              return (
+                <div key={item.id}>
+                  <CardInfo
+                    img={item.img}
+                    name={item.name}
+                    description={item.description}
+                    price={item.price}
+                    item={item}
+                    addToCart={addToCart}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Bebidas
+export default Bebidas;
