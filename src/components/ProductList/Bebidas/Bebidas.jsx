@@ -5,19 +5,19 @@ import style from "../Products.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getBebidas } from "../../../redux/action";
 function Bebidas() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.bebidas);
-  
+
   useEffect(() => {
-    dispatch(getBebidas())
-  },[dispatch])
+    dispatch(getBebidas());
+  }, [dispatch]);
 
   return (
     <div>
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Bebidas</h1>
+            <h2>Bebidas</h2>
           </div>
           <div>
             {products.map(function (item) {
@@ -28,7 +28,6 @@ function Bebidas() {
                     name={item.name}
                     description={item.description}
                     price={item.price}
-                    
                   />
                 </div>
               );

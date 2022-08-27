@@ -12,7 +12,7 @@ function BigB() {
       {filtrado && (
         <div>
           <div className={style.titulo}>
-            <h1>Big Burguer</h1>
+            <h2>Big Burguer</h2>
           </div>
           <div>
             {filtrado.map(function (item) {

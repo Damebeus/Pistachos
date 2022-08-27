@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getEmpanadas, getPromo } from "../../../redux/action";
 import CardInfo from "../../CardInfo/CardInfo";
 import { useSelector, useDispatch } from "react-redux";
+import style from "../Products.module.css";
 function Promociones() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.promos);
@@ -13,8 +14,8 @@ function Promociones() {
     <div>
       {products && (
         <div>
-          <div >
-            <h1>Promociones</h1>
+          <div className={style.titulo}>
+            <h2>Promociones</h2>
           </div>
           <div>
             {products.map((product) => {
