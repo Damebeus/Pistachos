@@ -46,7 +46,7 @@
   .boton {
     display: flex;
     justify-content: center;
-    margin-top: 35%;
+    margin-top: 10%;
   }
   .boton button {
     background-color: #a7c71c;
@@ -92,7 +92,8 @@
     -webkit-animation-name: flash;
     animation-name: flash;
   }
-  .footer {
+  .footer img {
     overflow: hidden;
+    max-width: 414px;
   }
 }
