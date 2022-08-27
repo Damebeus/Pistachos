@@ -24,8 +24,10 @@ function ProductList() {
         <h1>Name</h1>
         <Searchbar />
       </div>
-      <div className={style.container}>
+      <div className={style.carrusel}>
         <Promociones />
+      </div>
+      <div className={style.container}>
         <Destacados />
         <Empanadas />
         <Pizza />
