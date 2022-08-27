@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { getEmpanadas, getPromo } from "../../../redux/action";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import {  getPromo } from "../../../redux/action";
 function Promociones() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.promos);
@@ -10,26 +10,22 @@ function Promociones() {
   useEffect(() => {
     dispatch(getPromo());
   }, [dispatch]);
-
   return (
-    <div>
+    <div className={style.container}>
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Promociones</h1>
+            <h1>Empanadas</h1>
           </div>
           <div>
-            {products.map(function (item) {
+            {products.map((product) => {
               return (
-                <div key={item.id}>
-                  <CardInfo
-                    img={item.image}
-                    name={item.name}
-                    description={item.description}
-                    price={item.price}
-                    item={item}
-                  />
-                </div>
+                <CardInfo
+                  key={product.id}
+                  img={product.image}
+                  name={product.name}
+                  price={product.price}
+                />
               );
             })}
           </div>
@@ -40,4 +36,3 @@ function Promociones() {
 }
 
 export default Promociones;
-

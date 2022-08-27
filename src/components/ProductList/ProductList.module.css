@@ -2,4 +2,24 @@
   .container {
     background-color: #dbdbdb;
   }
+  .background {
+    background-color: #dbdbdb;
+  }
+  .carrusel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .titulo h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Merienda", cursive;
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
