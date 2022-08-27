@@ -1,9 +1,11 @@
 @media screen and (max-width: 414px) {
-  .titulo {
-    font-size: 1.1rem;
+  .titulo h2 {
+    font-size: 40px;
     display: flex;
     justify-content: center;
     font-family: "Merienda", cursive;
     border-bottom: 1px solid rgb(0, 0, 0);
+    margin-top: 35px;
+    margin-bottom: 35px;
   }
 }

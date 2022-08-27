@@ -12,11 +12,7 @@ import Hamburguesas from "./Hamburguesas/Hamburguesas";
 import BigB from "./BigB/BigB";
 import Cart from "../Cart/Cart";
 import style from "./ProductList.module.css";
-
-import Cart from "../Cart/Cart";
-
 import Carrousel from "./Carrousel/Carrousel";
-import Promociones from "./Promociones/Promociones";
 
 function ProductList() {
   const { isLoading } = useAuth0;
@@ -28,10 +24,6 @@ function ProductList() {
       <h1>Pistachos</h1>
       <div className={style.search}>
         <Searchbar />
-      </div>
-
-      <div className={style.carrusel}>
-        <Promociones />
       </div>
       <div className={style.container}>
         <Carrousel />

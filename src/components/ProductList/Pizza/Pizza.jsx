@@ -5,19 +5,18 @@ import style from "../Products.module.css";
 import { useDispatch, useSelector } from "react-redux";
 function Pizza() {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.pizzas)
+  const products = useSelector((state) => state.pizzas);
 
   useEffect(() => {
     dispatch(getPizzas());
   }, [dispatch]);
 
-  console.log(products)
   return (
     <div>
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Pizzas</h1>
+            <h2>Pizzas</h2>
           </div>
           <div>
             {products.map((product) => {

@@ -10,38 +10,37 @@ export const ALL_PRODUCTS = "ALL_PRODUCTS";
 export const GET_EMPANADA = "GET_EMPANADA";
 export const GET_BEBIDAS = "GET_BEBIDAS";
 export const GET_PIZZAS = "GET_PIZZAS";
-export const GET_MILANESAS = 'GET_MILANESAS';
-export const GET_HAMBURGUESAS = 'GET_HAMBURGUESAS';
-export const GET_LOMO = 'GET_LOMO';
-export const GET_PROMO = 'GET_PROMO';
+export const GET_MILANESAS = "GET_MILANESAS";
+export const GET_HAMBURGUESAS = "GET_HAMBURGUESAS";
+export const GET_LOMO = "GET_LOMO";
+export const GET_PROMO = "GET_PROMO";
 
-
-export function getPromo(){
-  return async function(dispatch){
+export function getPromo() {
+  return async function (dispatch) {
     try {
-      const result = await axios.get('https://pistachos.herokuapp.com/filtros/promo')
+      const result = await axios.get(
+        "https://pistachos.herokuapp.com/filtros/promo"
+      );
       return dispatch({
         type: GET_PROMO,
-        payload: result.data
-      })
-    } catch (error) {
-      
-    }
-  }
+        payload: result.data,
+      });
+    } catch (error) {}
+  };
 }
 
-export function getLomo(){
-  return async function(dispatch){
+export function getLomo() {
+  return async function (dispatch) {
     try {
-      const result = await axios.get('https://pistachos.herokuapp.com/filtros/lomito')
+      const result = await axios.get(
+        "https://pistachos.herokuapp.com/filtros/lomito"
+      );
       return dispatch({
         type: GET_LOMO,
-        payload: result.data
-      })
-    } catch (error) {
-      
-    }
-  }
+        payload: result.data,
+      });
+    } catch (error) {}
+  };
 }
 
 export function getPizzas() {
@@ -50,7 +49,7 @@ export function getPizzas() {
       const result = await axios.get(
         "https://pistachos.herokuapp.com/filtros/pizza"
       );
-      console.log(result.data)
+
       return dispatch({
         type: GET_PIZZAS,
         payload: result.data,
@@ -61,33 +60,36 @@ export function getPizzas() {
   };
 }
 
-export function getHamburguesas(){
-  return async function(dispatch){
+export function getHamburguesas() {
+  return async function (dispatch) {
     try {
-      const result = await axios.get('https://pistachos.herokuapp.com/filtros/hamburguesa')
+      const result = await axios.get(
+        "https://pistachos.herokuapp.com/filtros/hamburguesa"
+      );
       return dispatch({
         type: GET_HAMBURGUESAS,
         payload: result.data,
-
-      })
+      });
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 }
 
-export function getMilanesas(){
-  return async function(dispatch){
+export function getMilanesas() {
+  return async function (dispatch) {
     try {
-      const result = await axios.get('https://pistachos.herokuapp.com/filtros/milanesa')
+      const result = await axios.get(
+        "https://pistachos.herokuapp.com/filtros/milanesa"
+      );
       return dispatch({
         type: GET_MILANESAS,
         payload: result.data,
-      })
+      });
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 }
 export function getBebidas() {
   return async function (dispatch) {

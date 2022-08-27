@@ -6,7 +6,7 @@ import { getHamburguesas } from "../../../redux/action";
 function Hamburguesas() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.hamburguesas);
-  
+
   useEffect(() => {
     dispatch(getHamburguesas());
   }, [dispatch]);
@@ -16,7 +16,7 @@ function Hamburguesas() {
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Hamburguesas</h1>
+            <h2>Hamburguesas</h2>
           </div>
           <div>
             {products.map(function (item) {

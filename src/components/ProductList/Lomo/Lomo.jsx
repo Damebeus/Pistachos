@@ -6,7 +6,7 @@ import { getLomo } from "../../../redux/action";
 function Lomo() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.lomos);
-  
+
   useEffect(() => {
     dispatch(getLomo());
   }, [dispatch]);
@@ -15,7 +15,7 @@ function Lomo() {
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Lomos</h1>
+            <h2>Lomos</h2>
           </div>
           <div>
             {products.map(function (item) {

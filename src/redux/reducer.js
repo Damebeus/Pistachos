@@ -19,7 +19,7 @@ const InitialState = {
   milanesas: [],
   lomos: [],
   hamburguesas: [],
-  promos:[],
+  promos: [],
   cart: [],
 };
 
@@ -32,23 +32,23 @@ export default function rootReducer(state = InitialState, action) {
         allProducts: action.payload,
       };
     }
-    case GET_PROMO:{
-      return{
+    case GET_PROMO: {
+      return {
         ...state,
         promos: action.payload,
-      }
+      };
     }
-    case GET_HAMBURGUESAS:{
-      return{
+    case GET_HAMBURGUESAS: {
+      return {
         ...state,
         hamburguesas: action.payload,
-      }
+      };
     }
-    case GET_LOMO:{
-      return{
+    case GET_LOMO: {
+      return {
         ...state,
-        lomos: action.payload
-      }
+        lomos: action.payload,
+      };
     }
     case GET_MILANESAS: {
       return {
@@ -57,7 +57,6 @@ export default function rootReducer(state = InitialState, action) {
       };
     }
     case GET_PIZZAS: {
-      console.log(action.payload);
       return {
         ...state,
         pizzas: action.payload,

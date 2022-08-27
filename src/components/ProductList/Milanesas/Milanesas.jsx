@@ -15,7 +15,7 @@ function Milanesas() {
       {products && (
         <div>
           <div className={style.titulo}>
-            <h1>Milanesas</h1>
+            <h2>Milanesas</h2>
           </div>
           <div>
             {products.map((product) => {
