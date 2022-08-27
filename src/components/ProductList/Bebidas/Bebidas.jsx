@@ -4,6 +4,7 @@ import CardInfo from '../../CardInfo/CardInfo'
 function Bebidas() {
   
   const filtrado = data.filter(function (a) { return a.category === 'Bebidas'})
+  
 
   const addToCart = () =>{}
 

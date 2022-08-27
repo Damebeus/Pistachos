@@ -24,15 +24,15 @@ function ProductList() {
         <Searchbar />
       </div>
 
-      <Promociones />
-      <Destacados />
+      {/* <Promociones />
+      <Destacados /> */}
       <Empanadas />
-      <Pizza />
+      {/* <Pizza />
       <Milanesas />
       <Lomo />
       <Hamburguesas />
       <BigB />
-      <Bebidas />
+      <Bebidas /> */}
     </div>
   );
 }

@@ -1,25 +1,33 @@
 import React, { useState } from "react";
-import {AddToCart} from "../../redux/action"
-import {useDispatch} from 'react-redux'
-function CardInfo({ item }) {
-  const [cart,setCart] = useState([])
+import { AddToCart } from "../../redux/action";
+import { useDispatch } from "react-redux";
+function CardInfo({ img,name,description,price }) {
+  const [cart, setCart] = useState([]);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  function addToCart (id){
-    dispatch(AddToCart(id))
-    setCart([...cart])
-    console.log(id, `hola`)
-  } 
   return (
     <div>
       <div>
-        <img src={item.img} alt={item.name} width="150px" height="100px" />
+        <img src={img} alt={name} width="150px" height="100px" />
         <div>
-          <h2>{item.name}</h2>
-          <p>{item.description}</p>
-          <span>{"$ " + item.price}</span>
-          <button onClick={()=> addToCart(AddToCart)}>Add to Cart</button>
+          <h2>{name}</h2>
+          <p>{description}</p>
+          <span>{"$ " + price}</span>
+          <button
+            onClick={() =>
+              dispatch(
+                AddToCart({
+                  img,
+                  name,
+                  description,
+                  price,
+                })
+              )
+            }
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
