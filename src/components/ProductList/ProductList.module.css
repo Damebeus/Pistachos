@@ -1,6 +1,7 @@
 @media screen and (max-width: 414px) {
   .container {
-    background-color: #dbdbdb;
+    /*  background-color: #dbdbdb; */
+    background-image: url("./bgw.jpg");
   }
   .background {
     background-color: #dbdbdb;

@@ -21,7 +21,7 @@ function ProductList() {
   return (
     <div className={style.titulo}>
       <img src='' alt='' />
-      <h1>Pistachos</h1>
+      <h1>Pistacho</h1>
       <div className={style.search}>
         <Searchbar />
       </div>
