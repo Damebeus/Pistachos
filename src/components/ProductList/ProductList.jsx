@@ -25,6 +25,7 @@ function ProductList() {
       <div className={style.search}>
         <Searchbar />
       </div>
+
       <div className={style.container}>
         <Carrousel />
         <Promociones />
