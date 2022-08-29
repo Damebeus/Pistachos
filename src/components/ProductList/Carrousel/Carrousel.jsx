@@ -38,7 +38,7 @@ function Carrousel() {
 
           <Carousel.Caption>
             <div className={style.tituloo}>
-              <p>No existe hamburguesa mas rica que esta, diosssss.</p>
+              <p>No existe hamburguesa mas rica que esta.</p>
             </div>
           </Carousel.Caption>
         </div>
@@ -58,7 +58,7 @@ function Carrousel() {
 
           <Carousel.Caption>
             <div className={style.tituloo}>
-              <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p>
+              <p>Pizza de con cebolla y parmesano.</p>
             </div>
           </Carousel.Caption>
         </div>

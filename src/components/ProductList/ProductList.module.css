@@ -22,11 +22,16 @@
     margin-bottom: 20px;
   }
   .banner {
-    height: 175px;
-    background-image: url("./banner.png");
+    height: 200px;
+    background-image: url("./bgw.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    text-align: center;
+  }
+  .banner img {
+    height: 150px;
+    margin-top: 20px;
   }
   .navbar {
     height: 35px;

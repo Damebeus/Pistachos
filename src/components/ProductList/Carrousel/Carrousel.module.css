@@ -1,6 +1,7 @@
 @media screen and (max-width: 414px) {
   .containerr {
     height: 330px;
+    border-top: 10px solid #869b34;
     background-color: #869b34;
   }
 
@@ -10,6 +11,7 @@
   .tituloo p {
     color: black;
     font-size: 15px;
+    margin-top: 10px;
   }
   .supcarru h3 {
     color: black;
