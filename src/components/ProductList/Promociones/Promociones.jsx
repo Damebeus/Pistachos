@@ -21,6 +21,7 @@ function Promociones() {
             {products.map((product) => {
               return (
                 <CardInfo
+                  id={product.id}
                   key={product.id}
                   img={product.image}
                   name={product.name}

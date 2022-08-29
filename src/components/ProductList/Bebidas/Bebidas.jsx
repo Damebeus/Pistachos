@@ -24,6 +24,7 @@ function Bebidas() {
               return (
                 <div key={item.id}>
                   <CardInfo
+                    id={item.id}
                     img={item.image}
                     name={item.name}
                     description={item.description}

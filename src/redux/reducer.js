@@ -74,6 +74,13 @@ export default function rootReducer(state = InitialState, action) {
         empanadas: action.payload,
       };
     }
+
+    case ADD_TO_CART:
+      // console.log(action.payload);
+      return {
+        ...state,
+        cart: action.payload,
+      }
     default:
       return state;
   }

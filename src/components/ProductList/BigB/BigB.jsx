@@ -19,6 +19,7 @@ function BigB() {
               return (
                 <div key={item.id}>
                   <CardInfo
+                    id={item.id}
                     img={item.img}
                     name={item.name}
                     description={item.description}
