@@ -5,10 +5,10 @@ function Carrousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        <div className={style.supcarru}>
+        {/*   <div className={style.supcarru}>
           {" "}
           <h3>Sanguche de Milanesa</h3>
-        </div>
+        </div> */}
         <div className={style.containerr}>
           <img
             className='d-block w-100'
@@ -24,10 +24,10 @@ function Carrousel() {
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <div className={style.supcarru}>
+        {/*  <div className={style.supcarru}>
           {" "}
           <h3>Hamburguesa con cheddar</h3>
-        </div>
+        </div> */}
         <div className={style.containerr}>
           <img
             className='d-block w-100'
@@ -44,10 +44,10 @@ function Carrousel() {
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <div className={style.supcarru}>
+        {/*   <div className={style.supcarru}>
           {" "}
           <h3>Pizza fugazzeta</h3>
-        </div>
+        </div> */}
         <div className={style.containerr}>
           <img
             className='d-block w-100'
