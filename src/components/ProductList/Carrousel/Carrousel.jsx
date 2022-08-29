@@ -5,6 +5,10 @@ function Carrousel() {
   return (
     <Carousel>
       <Carousel.Item>
+        <div className={style.supcarru}>
+          {" "}
+          <h3>Sanguche de Milanesa</h3>
+        </div>
         <div className={style.containerr}>
           <img
             className='d-block w-100'
@@ -14,13 +18,16 @@ function Carrousel() {
           />
           <Carousel.Caption>
             <div className={style.tituloo}>
-              <h3>Sanguche de Milanesa</h3>
-              {/*              <p>Carne de ternera de primerisima calidad.</p> */}
+              <p>Carne de ternera de primerisima calidad.</p>
             </div>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
+        <div className={style.supcarru}>
+          {" "}
+          <h3>Hamburguesa con cheddar</h3>
+        </div>
         <div className={style.containerr}>
           <img
             className='d-block w-100'
@@ -31,13 +38,16 @@ function Carrousel() {
 
           <Carousel.Caption>
             <div className={style.tituloo}>
-              <h3>Hamburguesa con cheddar</h3>
-              {/*         <p>No existe hamburguesa mas rica que esta, diosssss.</p> */}
+              <p>No existe hamburguesa mas rica que esta, diosssss.</p>
             </div>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
       <Carousel.Item>
+        <div className={style.supcarru}>
+          {" "}
+          <h3>Pizza fugazzeta</h3>
+        </div>
         <div className={style.containerr}>
           <img
             className='d-block w-100'
@@ -48,15 +58,13 @@ function Carrousel() {
 
           <Carousel.Caption>
             <div className={style.tituloo}>
-              <h3>Pizza fugazzeta</h3>
-              {/*    <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p> */}
+              <p>Pizza de base sencilla con cebolla y un poco de parmesano.</p>
             </div>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
     </Carousel>
-    );
+  );
 }
 
 export default Carrousel;
-

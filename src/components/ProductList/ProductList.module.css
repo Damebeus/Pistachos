@@ -6,10 +6,7 @@
   .background {
     background-color: #dbdbdb;
   }
-  .carrusel {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
   .titulo h1 {
     font-size: 4rem;
     font-weight: bold;
@@ -23,5 +20,12 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .banner {
+    height: 175px;
+    background-image: url("./banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }

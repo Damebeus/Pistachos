@@ -1,15 +1,27 @@
 @media screen and (max-width: 414px) {
   .containerr {
     height: 330px;
+
     background-color: #a7c71c;
   }
 
   .tituloo {
     margin-bottom: 20px;
   }
-  .tituloo h3 {
+  .tituloo p {
     color: black;
-    font-size: 20px;
+    font-size: 15px;
+  }
+  .supcarru h3 {
+    color: black;
+    font-size: 25px;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .supcarru {
+    height: 50px;
+    background-color: #a7c71c;
   }
 }
