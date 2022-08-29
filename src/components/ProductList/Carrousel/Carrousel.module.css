@@ -1,8 +1,7 @@
 @media screen and (max-width: 414px) {
   .containerr {
     height: 330px;
-
-    background-color: #a7c71c;
+    background-color: #f7aa25;
   }
 
   .tituloo {
@@ -21,7 +20,7 @@
     text-align: center;
   }
   .supcarru {
-    height: 50px;
-    background-color: #a7c71c;
+    height: 35px;
+    background-color: #f7aa25;
   }
 }
