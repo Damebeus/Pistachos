@@ -28,4 +28,12 @@
     background-size: cover;
     background-position: center;
   }
+  .navbar {
+    height: 35px;
+    background-color: #869b34;
+  }
+  .navbar img {
+    height: 30px;
+    margin-top: 2.5px;
+  }
 }

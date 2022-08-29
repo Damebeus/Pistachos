@@ -13,6 +13,7 @@ import BigB from "./BigB/BigB";
 import Cart from "../Cart/Cart";
 import style from "./ProductList.module.css";
 import Carrousel from "./Carrousel/Carrousel";
+import burger from "./burger.png";
 
 function ProductList() {
   const { isLoading } = useAuth0;
@@ -20,6 +21,9 @@ function ProductList() {
   if (isLoading) return <h1>...Loading</h1>;
   return (
     <div className={style.titulo}>
+      <div className={style.navbar}>
+        <img src={burger}></img>
+      </div>
       <div className={style.banner}></div>
 
       {/*   <h1>Pistacho</h1> */}
