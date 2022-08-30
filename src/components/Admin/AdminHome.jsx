@@ -1,5 +1,5 @@
 import React,{ useEffect} from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import AdminNav from "./AdminNav/AdminNav";
 import {useSelector , useDispatch} from 'react-redux'
 import AdminCard from "./AdminCard/AdminCard";
@@ -33,13 +33,16 @@ function AdminHome() {
                 allProducts.map(function (item){
                   return (
                     <div key={item.id}>
-                      <CardInfo
+                      <AdminCard
                        key={item.id}
                        name={item.name}
                        img={item.image}
                        price={item.price}
                        id={item.id}
                        />
+                       <Link to={`/admin/products/${item.id}`}>
+                         <button>Editar Producto</button>
+                       </Link>
                     </div>
                   )
                 })
