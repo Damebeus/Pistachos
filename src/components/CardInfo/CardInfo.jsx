@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./CardInfo.module.css";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 function CardInfo(product) {
 
@@ -63,9 +64,11 @@ function CardInfo(product) {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <span>{"$" + product.price}</span>
+          <Link to={`admin/products/${product.id}`}>
           <button onClick={() => handleProduct(producto)}>
             Agregar al carrito
           </button>
+          </Link>
         </div>
         <div className={style.imagen}>
           <img src={product.img} alt={product.name} width='150px' height='130px' />
