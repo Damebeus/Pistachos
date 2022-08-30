@@ -1,12 +1,11 @@
 @media screen and (max-width: 414px) {
   .todo {
-    margin-top: 60px;
+    margin-top: 90px;
   }
   .container {
     max-height: 100px;
     display: flex;
     overflow-x: auto;
-
     overflow-y: hidden;
     /*     position: sticky;
     top: 10px; */

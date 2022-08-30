@@ -58,13 +58,15 @@ function CardInfo(product) {
     <div className={style.container}>
       <div className={style.subContainer}>
         <div className={style.columna}>
-          <h2>{product.name}</h2>
+          <div className={style.titulo}>
+            <h2>{product.name}</h2>
+          </div>
           <p>{product.description}</p>
           <span>{"$" + product.price}</span>
           <Link to={`admin/products/${product.id}`}>
-          <button onClick={() => handleProduct(producto)}>
-            Agregar al carrito
-          </button>
+            <button onClick={() => handleProduct(producto)}>
+              Agregar al carrito
+            </button>
           </Link>
         </div>
         <div className={style.columna2}>

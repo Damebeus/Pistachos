@@ -35,7 +35,7 @@ function ProductList() {
         <div className={style.banner}>
           <img src={logo} />
         </div>
-        <Searchbar />
+        {/*  <Searchbar /> */}
         <Carrousel />
         <Categorias />
         <Promociones />
