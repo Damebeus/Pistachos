@@ -14,6 +14,29 @@ export const GET_MILANESAS = "GET_MILANESAS";
 export const GET_HAMBURGUESAS = "GET_HAMBURGUESAS";
 export const GET_LOMO = "GET_LOMO";
 export const GET_PROMO = "GET_PROMO";
+export const POST_PRODUCT = "POST_PRODUCT"
+export const EDIT_PRODUCT = "EDIT_PRODUCT"
+
+export function postProduct(payload) {
+  return async function () {
+    const result = await axios.post(`https://pistachos.herokuapp.com/productos`, payload);
+    return {
+      type: POST_PRODUCT,
+      payload: result.data,
+    }
+  }
+}
+  
+export function editProduct(payload,id){
+  return async function (){
+    console.log(payload);
+    const result = await axios.put(`https://pistachos.herokuapp.com/productos/${id}`, payload);
+    return{
+      type: EDIT_PRODUCT,
+      payload: result.data
+    }
+  }
+}
 
 export function getPromo() {
   return async function (dispatch) {
