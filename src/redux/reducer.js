@@ -8,6 +8,9 @@ import {
   ALL_PRODUCTS,
   GET_EMPANADA,
   GET_BEBIDAS,
+  GET_ORDENES,
+  ORDER_ASC,
+  ORDER_DES,
 } from "./action";
 
 const InitialState = {
@@ -21,10 +24,29 @@ const InitialState = {
   hamburguesas: [],
   promos: [],
   cart: [],
+  ordenes: [],
 };
 
 export default function rootReducer(state = InitialState, action) {
   switch (action.type) {
+    case ORDER_DES:{
+      return {
+        ...state,
+        ordenes: action.payload
+      }
+    }
+    case ORDER_ASC:{
+      return {
+        ...state,
+        ordenes: action.payload
+      }
+    }
+    case GET_ORDENES: {
+      return {
+        ...state,
+        ordenes: action.payload,
+      };
+    }
     case ALL_PRODUCTS: {
       return {
         ...state,
@@ -80,7 +102,7 @@ export default function rootReducer(state = InitialState, action) {
       return {
         ...state,
         cart: action.payload,
-      }
+      };
     default:
       return state;
   }
