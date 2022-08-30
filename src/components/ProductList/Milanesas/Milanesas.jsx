@@ -21,6 +21,7 @@ function Milanesas() {
             {products.map((product) => {
               return (
                 <CardInfo
+                quantity={product.quantity}
                 id={product.id}
                   key={product.id}
                   img={product.image}
