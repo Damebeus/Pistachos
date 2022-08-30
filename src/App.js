@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/admin' component={AdminLog}/>
           <Route path='/admin/home' component={AdminHome}/>
           <Route path='/admin/ordenes' component={AdminOrdern}/>
-          <Route path='/admin/products' component={AdminProducts}/>
+          <Route path='/admin/products/:id' component={AdminProducts}/>
           <Route path='/admin/create' component={AdminCreate}/>
           <Route exact path='/' component={MobileWelcome} />
           <Route exact path='/home' component={Home} />

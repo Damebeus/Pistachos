@@ -21,11 +21,6 @@ function AdminNav() {
                 Ordenes
             </label>
         </Link>
-        <Link to='/admin/products'>
-            <label>
-                Edit Products
-            </label>
-        </Link>
         <Link to='/admin/create'>
             <label>
                 Create New Product
