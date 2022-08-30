@@ -1,5 +1,4 @@
 import axios from "axios";
-import data from "../data/data";
 // CATTITO DE COMPRAS
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_ONE_TO_CART = "REMOVE_ONE_TO_CART";
@@ -16,6 +15,53 @@ export const GET_LOMO = "GET_LOMO";
 export const GET_PROMO = "GET_PROMO";
 export const POST_PRODUCT = "POST_PRODUCT"
 export const EDIT_PRODUCT = "EDIT_PRODUCT"
+
+//ADMIN
+export const GET_ORDENES = "GET_ORDENES"
+export const ORDER_ASC = "ORDER_ASC"
+export const ORDER_DES = "ORDER_DES"
+
+export function getOrderAsc(){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/ordenes/asc`)
+      return dispatch({
+        type: ORDER_ASC,
+        payload: result.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+export function getOrderDes(){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/ordenes/desc`)
+      return dispatch({
+        type: ORDER_ASC,
+        payload: result.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+export function getAllOrders(){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/ordenes/allOrders`)
+      return dispatch({
+        type: GET_ORDENES,
+        payload: result.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
 
 export function postProduct(payload) {
   return async function () {
