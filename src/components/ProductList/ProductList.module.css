@@ -23,7 +23,7 @@
   }
   .banner {
     height: 200px;
-    background-image: url("./bgw.jpg");
+    /*  background-image: url("./bgw.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -32,13 +32,14 @@
   .banner img {
     height: 150px;
     margin-top: 20px;
+    margin-right: 10px;
   }
   .navbar {
-    height: 35px;
+    height: 55px;
     background-color: #869b34;
   }
   .navbar img {
     height: 30px;
-    margin-top: 2.5px;
+    margin-top: 10px;
   }
 }
