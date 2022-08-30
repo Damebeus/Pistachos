@@ -1,6 +1,7 @@
 @media screen and (max-width: 414px) {
   .todo {
     margin-top: 90px;
+    margin-bottom: 100px;
   }
   .container {
     max-height: 100px;
