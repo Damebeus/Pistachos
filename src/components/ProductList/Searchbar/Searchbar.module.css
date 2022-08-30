@@ -1,0 +1,13 @@
+@media screen and (max-width: 414px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .container input {
+    background-color: rgb(203, 203, 203);
+    margin-top: -20px;
+    width: 300px;
+    border-radius: 10px;
+    height: 50px;
+  }
+}

@@ -1,28 +1,99 @@
 @media screen and (max-width: 414px) {
   .containerr {
-    height: 330px;
-    border-top: 10px solid #869b34;
-    background-color: #869b34;
+    /*  margin-bottom: 20%; */
+    margin-top: 5%;
+    display: flex;
+    /* background-color: #f1eb8b; */
+    height: 300px;
+    border-bottom: 2px solid gainsboro;
+    border-top: 2px solid gainsboro;
   }
-
+  .parteinferior {
+    margin-top: 300px;
+  }
   .tituloo {
     margin-bottom: 20px;
   }
-  .tituloo p {
-    color: black;
-    font-size: 15px;
-    margin-top: 10px;
+  .listado {
+    display: flex;
+    flex-direction: column;
   }
-  .supcarru h3 {
-    color: black;
-    font-size: 25px;
-    font-weight: 700;
+  .listado h1 {
+    font-size: 30px;
+    color: #f4ac1c;
+    margin-bottom: 10px;
+  }
+
+  .listado p {
+    color: #fff;
+    margin: 0;
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
   }
-  .supcarru {
-    height: 35px;
-    background-image: url("../bgw.jpg");
+  .listado span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .imagen img {
+    position: relative;
+    margin-top: 25px;
+  }
+  .listadoreloj {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .listadoreloj h1 {
+    font-size: 30px;
+    color: #f4ac1c;
+    margin-bottom: 10px;
+  }
+  .imagenreloj img {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: -20px;
+  }
+  .listadoreloj p {
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .listadoreloj span {
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 17px;
+    margin-top: 15px;
+  }
+  .imagenpago img {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 20px;
+    height: 1;
+  }
+  .listadopago p {
+    color: #fff;
+    margin: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .listadopago h1 {
+    font-size: 30px;
+    color: #f4ac1c;
+    margin-bottom: 10px;
+    margin-top: 50px;
   }
 }

@@ -1,66 +1,66 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import style from "./Carrousel.module.css";
+import delivery from "./delivery.png";
+import pago from "./pago.png";
+import reloj from "./reloj.png";
 function Carrousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        {/*   <div className={style.supcarru}>
-          {" "}
-          <h3>Sanguche de Milanesa</h3>
-        </div> */}
         <div className={style.containerr}>
-          <img
-            className='d-block w-100'
-            src='https://www.comedera.com/wp-content/uploads/2021/06/sandwich-de-milanesa.jpg'
-            alt='First slide'
-            height='220'
-          />
-          <Carousel.Caption>
-            <div className={style.tituloo}>
-              <p>Carne de ternera de primerisima calidad.</p>
-            </div>
-          </Carousel.Caption>
+          <div className={style.imagen}>
+            <img src={delivery} alt='First slide' height='250' />
+          </div>
+          <div className={style.listado}>
+            <h1>Zona de reparto</h1>
+            <p>Arbolada</p>
+            <p>Tierra Alta</p>
+            <p>Tejas 4</p>
+            <p>Cañitas</p>
+            <p>EDC</p>
+            <p>Milenica</p>
+            <p>Causana</p>
+            <p>Valle del golf</p>
+          </div>
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        {/*  <div className={style.supcarru}>
-          {" "}
-          <h3>Hamburguesa con cheddar</h3>
-        </div> */}
         <div className={style.containerr}>
-          <img
-            className='d-block w-100'
-            src='https://kingshawaiian.cl/img/home/recetas/hamburguesa/hamburguesa_doble.png'
-            alt='Second slide'
-            height='220'
-          />
-
-          <Carousel.Caption>
-            <div className={style.tituloo}>
-              <p>No existe hamburguesa mas rica que esta.</p>
-            </div>
-          </Carousel.Caption>
+          <div className={style.imagenreloj}>
+            <img
+              className='d-block w-100'
+              src={reloj}
+              alt='Second slide'
+              height='250'
+            />
+          </div>
+          <div className={style.listadoreloj}>
+            <h1>Horarios</h1>
+            <span>Lunes</span>
+            <p>Cerrado</p>
+            <span>Martes a Domingo</span>
+            <p>12hs-14hs</p>
+            <p>20hs-23hs</p>
+          </div>
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        {/*   <div className={style.supcarru}>
-          {" "}
-          <h3>Pizza fugazzeta</h3>
-        </div> */}
         <div className={style.containerr}>
-          <img
-            className='d-block w-100'
-            src='https://cl-mycooktouch.group-taurus.com/image/recipe/540x391/fugazzeta'
-            alt='Third slide'
-            height='220'
-          />
-
-          <Carousel.Caption>
-            <div className={style.tituloo}>
-              <p>Pizza de con cebolla y parmesano.</p>
-            </div>
-          </Carousel.Caption>
+          <div className={style.imagenpago}>
+            <img
+              className='d-block w-100'
+              src={pago}
+              alt='Second slide'
+              height='200'
+            />
+          </div>
+          <div className={style.listadopago}>
+            <h1>Medios de pago</h1>
+            <p>Efectivo</p>
+            <p>Mercado Pago</p>
+            <p>Transferencia</p>
+          </div>
         </div>
       </Carousel.Item>
     </Carousel>
