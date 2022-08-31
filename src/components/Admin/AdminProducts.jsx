@@ -70,6 +70,7 @@ function AdminProducts() {
         <div>
           <h1>Editar Producto</h1>
         </div>
+        
         <form onSubmit={(e) => handleSubmit(e)}>
         <div className="field">
             <label>Name:</label>

@@ -20,9 +20,26 @@ export const EDIT_PRODUCT = "EDIT_PRODUCT"
 export const GET_ORDENES = "GET_ORDENES"
 export const ORDER_ASC = "ORDER_ASC"
 export const ORDER_DES = "ORDER_DES"
+export const GET_BY_PRODUCT = "GET_BY_PRODUCT"
 
 //Envio
 export const POST_ENVIO = "POST_ENVIO"
+
+
+export function getByProduct(name){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/productos?name=${name}`)
+      return dispatch({
+        type: GET_BY_PRODUCT,
+        payload: result.data
+      })
+    } catch (error) {
+      alert('Recipe not found')
+      console.log(error)
+    }
+  }
+}
 
 export function getOrderAsc(){
   return async function(dispatch){

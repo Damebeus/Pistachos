@@ -11,6 +11,7 @@ import {
   GET_ORDENES,
   ORDER_ASC,
   ORDER_DES,
+  GET_BY_PRODUCT,
 } from "./action";
 
 const InitialState = {
@@ -29,6 +30,11 @@ const InitialState = {
 
 export default function rootReducer(state = InitialState, action) {
   switch (action.type) {
+    case GET_BY_PRODUCT: 
+      return {
+        ...state,
+        allProducts: action.payload
+      }
     case ORDER_DES:{
       return {
         ...state,
