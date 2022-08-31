@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,7 +11,7 @@ function Milanesas() {
     dispatch(getMilanesas());
   }, [dispatch]);
   return (
-    <div>
+    <div id="sanguches">
       {products && (
         <div>
           <div className={style.titulo}>

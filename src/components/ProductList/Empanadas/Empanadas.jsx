@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { getEmpanadas } from "../../../redux/action";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
@@ -11,7 +11,7 @@ function Empanadas() {
     dispatch(getEmpanadas());
   }, [dispatch]);
   return (
-    <div className={style.container}>
+    <div className={style.container} id='empanadas'>
       {products && (
         <div>
           <div className={style.titulo}>
