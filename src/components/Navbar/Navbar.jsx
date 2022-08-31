@@ -3,7 +3,7 @@ import Login from "./Login/Login";
 import LogOut from "./LogOut/LogOut";
 import { useAuth0 } from "@auth0/auth0-react";
 import style from "./Navbar.module.css";
-import {Liink, Link} from 'react-scroll'
+import { Liink, Link } from "react-scroll";
 function Navbar() {
   const { isAuthenticated } = useAuth0();
 
@@ -27,37 +27,37 @@ function Navbar() {
         <div class='collapse navbar-collapse ' id='navbarNav'>
           <ul class='navbar-nav '>
             <button class='nav-item' className={style.boton}>
-              <Link to='pizza'>
-              <a class='nav-link active' href='#'>
-                Pizzas
-              </a>
-              </Link>
-            </button>
-            <button class='nav-item' className={style.boton}>
               <Link to='empanadas'>
-              <a class='nav-link active' href='#'>
-                Empanadas
-              </a>
+                <a class='nav-link active' href='#'>
+                  Empanadas
+                </a>
               </Link>
             </button>
             <button class='nav-item' className={style.boton}>
-              <Link to='burguer'>
-              <a class='nav-link active'>Hamburguesas</a>
-              </Link>
-            </button>
-            <button class='nav-item' className={style.boton}>
-              <Link to='lomitos'>
-              <a class='nav-link active'>Lomitos</a>
+              <Link to='pizza'>
+                <a class='nav-link active' href='#'>
+                  Pizzas
+                </a>
               </Link>
             </button>
             <button class='nav-item' className={style.boton}>
               <Link to='sanguches'>
-              <a class='nav-link active'>Sanguches</a>
+                <a class='nav-link active'>Milanesas</a>
+              </Link>
+            </button>
+            <button class='nav-item' className={style.boton}>
+              <Link to='lomitos'>
+                <a class='nav-link active'>Lomos</a>
+              </Link>
+            </button>
+            <button class='nav-item' className={style.boton}>
+              <Link to='burguer'>
+                <a class='nav-link active'>Hamburguesas</a>
               </Link>
             </button>
             <button class='nav-item' className={style.boton}>
               <Link to='Bebidas'>
-              <a class='nav-link active'>Bebidas</a>
+                <a class='nav-link active'>Bebidas</a>
               </Link>
             </button>
             <button class='nav-item' className={style.boton}>
