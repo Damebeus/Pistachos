@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import data from "../../../data/data";
+import React, { useEffect } from "react";
+// import data from "../../../data/data";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,7 +13,7 @@ function Bebidas() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div id="Bebidas">
       {products && (
         <div>
           <div className={style.titulo}>

@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import AdminNav from "./AdminNav/AdminNav";
 import {useSelector , useDispatch} from 'react-redux'
 import AdminCard from "./AdminCard/AdminCard";
-import CardInfo from "../CardInfo/CardInfo";
+// import CardInfo from "../CardInfo/CardInfo";
 import { getAllProducts } from "../../redux/action";
 
 function AdminHome() {

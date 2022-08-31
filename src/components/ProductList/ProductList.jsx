@@ -1,16 +1,16 @@
 import React from "react";
-import Destacados from "../Destacados/Destacados";
+// import Destacados from "../Destacados/Destacados";
 import Empanadas from "./Empanadas/Empanadas";
 import Pizza from "./Pizza/Pizza";
 import Bebidas from "./Bebidas/Bebidas";
 import Promociones from "./Promociones/Promociones";
-import Searchbar from "./Searchbar/Searchbar";
+// import Searchbar from "./Searchbar/Searchbar";
 import { useAuth0 } from "@auth0/auth0-react";
 import Milanesas from "./Milanesas/Milanesas";
 import Lomo from "./Lomo/Lomo";
 import Hamburguesas from "./Hamburguesas/Hamburguesas";
 import BigB from "./BigB/BigB";
-import Cart from "../Cart/Cart";
+// import Cart from "../Cart/Cart";
 import style from "./ProductList.module.css";
 import Carrousel from "./Carrousel/Carrousel";
 import burger from "./burger.png";
@@ -24,7 +24,7 @@ function ProductList() {
   return (
     <div className={style.titulo}>
       <div className={style.navbar}>
-        <img src={burger}></img>
+        <img src={burger} alt="none"></img>
       </div>
 
       {/*   <h1>Pistacho</h1> */}
@@ -33,7 +33,7 @@ function ProductList() {
 
       <div className={style.container}>
         <div className={style.banner}>
-          <img src={logo} />
+          <img src={logo} alt="none"/>
         </div>
         {/*  <Searchbar /> */}
         <Carrousel />
