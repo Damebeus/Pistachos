@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import CardInfo from "../../CardInfo/CardInfo";
 import style from "../Products.module.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,7 +12,7 @@ function Hamburguesas() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div id='burguer'>
       {products && (
         <div>
           <div className={style.titulo}>
