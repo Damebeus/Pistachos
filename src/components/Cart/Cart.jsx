@@ -108,6 +108,10 @@ function Cart() {
 
         <div>
           <button>
+            <Link to='/listado'>ATRÁS</Link>
+          </button>
+
+          <button>
             <Link to='/envio'>SIGUIENTE</Link>
           </button>
         </div>

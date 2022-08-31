@@ -59,12 +59,10 @@ function CardInfo(product) {
             <h2>{product.name}</h2>
           </div>
           <p>{product.description}</p>
-          <span>{"$" + product.price}</span>
-          <Link>
+          <span>{"$" + product.price}</span>  
             <button onClick={() => handleProduct(producto)}>
               Agregar al carrito
             </button>
-          </Link>
         </div>
         <div className={style.columna2}>
           <div className={style.imagen}>

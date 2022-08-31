@@ -21,6 +21,9 @@ export const GET_ORDENES = "GET_ORDENES"
 export const ORDER_ASC = "ORDER_ASC"
 export const ORDER_DES = "ORDER_DES"
 
+//Envio
+export const POST_ENVIO = "POST_ENVIO"
+
 export function getOrderAsc(){
   return async function(dispatch){
     try {
@@ -224,4 +227,26 @@ export function removeOneToCart(id) {
       payload: id,
     });
   };
+}
+
+export function postEnvio(payload) {
+  return async function () {
+    console.log(payload)
+    // const result = await axios.post(`https://pistachos.herokuapp.com/envio`, payload);
+    return {
+      type: POST_PRODUCT,
+      // payload: result.data,
+    }
+  }
+}
+
+export function postOrden(payload) {
+  return async function () {
+    console.log(payload)
+    // const result = await axios.post(`https://pistachos.herokuapp.com/ordenes`, payload);
+    return {
+      type: POST_PRODUCT,
+      // payload: result.data,
+    }
+  }
 }
