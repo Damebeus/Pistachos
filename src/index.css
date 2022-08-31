@@ -13,4 +13,12 @@ body {
 code {
   font-family: "Merienda", cursive;
 }
+:root {
+  --mainColor: #b5190d;
+  --green: #869b34;
+  --dark: #9d0e08;
+  --oldPrice: #8a8a8a;
+  --footerColor: #f2f2f2;
+  --buttonHover: #7c0500;
+}
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");

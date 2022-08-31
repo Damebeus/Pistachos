@@ -16,6 +16,7 @@ import Carrousel from "./Carrousel/Carrousel";
 import burger from "./burger.png";
 import logo from "./logomayor.png";
 import Categorias from "./Categorias/Categorias";
+import Navbar from "../Navbar/Navbar";
 
 function ProductList() {
   const { isLoading } = useAuth0;
@@ -23,19 +24,10 @@ function ProductList() {
   if (isLoading) return <h1>...Loading</h1>;
   return (
     <div className={style.titulo}>
-      <div className={style.navbar}>
-        <img src={burger}></img>
-      </div>
-
-      {/*   <h1>Pistacho</h1> */}
-      {/*  <div className={style.search}>
-      </div> */}
-
       <div className={style.container}>
         <div className={style.banner}>
           <img src={logo} />
         </div>
-        {/*  <Searchbar /> */}
         <Carrousel />
         <Categorias />
         <Promociones />
@@ -46,6 +38,7 @@ function ProductList() {
         <Hamburguesas />
         <BigB />
         <Bebidas />
+        <Navbar />
       </div>
     </div>
   );

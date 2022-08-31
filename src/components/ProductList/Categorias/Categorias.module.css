@@ -8,8 +8,6 @@
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    /*     position: sticky;
-    top: 10px; */
   }
   .titulo {
     display: flex;
@@ -29,7 +27,6 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
-    /*     background-color: rgb(234, 169, 217); */
     margin-right: 10px;
     border-radius: 50px;
   }
