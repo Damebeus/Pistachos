@@ -12,16 +12,13 @@ function CardInfo(product) {
     if (boolean) {
       setCount((count += 1));
       product.quantity += 1;
-      console.log("gracias loco por agregar uno", product);
     } else {
       setCount((count -= 1));
       product.quantity -= 1;
-      console.log("que me sacas uno ", product);
     }
   }
 
   function handleProduct(product) {
-    console.log("soy el localStorage", product);
     if (!localStorage.getItem("carrito")) {
       let a = [];
       a.push(product);
@@ -63,7 +60,7 @@ function CardInfo(product) {
           </div>
           <p>{product.description}</p>
           <span>{"$" + product.price}</span>
-          <Link to={`admin/products/${product.id}`}>
+          <Link>
             <button onClick={() => handleProduct(producto)}>
               Agregar al carrito
             </button>
@@ -82,19 +79,20 @@ function CardInfo(product) {
           <div className={style.count}>
             <button
               onClick={() => {
-                changeAmount(producto, true);
+                changeAmount(producto, false);
               }}
+              disabled={producto.quantity === 1 ? true : false}
             >
-              <label>+</label>
+              <label>-</label>
             </button>
 
             <label>{producto.quantity}</label>
             <button
               onClick={() => {
-                changeAmount(producto, false);
+                changeAmount(producto, true);
               }}
             >
-              <label>-</label>
+              <label>+</label>
             </button>
           </div>
         </div>
