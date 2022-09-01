@@ -53,7 +53,6 @@ export default function rootReducer(state = InitialState, action) {
         ...state,
         allProducts: action.payload
       }
->>>>>>>>> Temporary merge branch 2
     case ORDER_DES:{
       return {
         ...state,
