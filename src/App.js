@@ -9,19 +9,20 @@ import MobileWelcome from "./components/Home/Welcome/MobileWelcome";
 import Welcome from "./components/Home/Welcome/Welcome";
 import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
+import Tutorial from "./components/Home/Tutorial/Tutorial";
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Switch>
-
-          <Route exact path='/admin' component={AdminLog}/>
-          <Route path='/admin/home' component={AdminHome}/>
-          <Route path='/admin/ordenes' component={AdminOrdern}/>
-          <Route path='/admin/products/:id' component={AdminProducts}/>
-          <Route path='/admin/create' component={AdminCreate}/>
+          <Route exact path='/admin' component={AdminLog} />
+          <Route path='/admin/home' component={AdminHome} />
+          <Route path='/admin/ordenes' component={AdminOrdern} />
+          <Route path='/admin/products/:id' component={AdminProducts} />
+          <Route path='/admin/create' component={AdminCreate} />
           <Route exact path='/' component={MobileWelcome} />
+          <Route exact path='/tutorial' component={Tutorial} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/listado' component={ProductList} />
           <Route path='/cart' component={Cart} />

@@ -16,7 +16,7 @@ const MobileWelcome = () => {
         <h2>MENU</h2>
       </div>
       <div className={style.boton}>
-        <Link to='/listado'>
+        <Link to='/tutorial'>
           <button>Realizar pedido</button>
         </Link>
       </div>

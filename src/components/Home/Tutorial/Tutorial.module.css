@@ -1,0 +1,107 @@
+@media screen and (max-width: 415px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 667px;
+    max-height: 875px;
+    max-width: 414px;
+    background-image: url("../Welcome/bgw.jpg");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+  .subcontainer {
+    margin-top: 20px;
+  }
+  .titulo {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .titulo h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Merienda", cursive;
+  }
+
+  .subcontainer img {
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .uno {
+    border-bottom: 5px solid rgb(143, 143, 143);
+    /*  background-color: wheat; */
+    display: flex;
+  }
+  .uno p {
+    margin-top: 75px;
+  }
+  .text p {
+    margin-top: 60px;
+    color: aliceblue;
+    margin-left: 10px;
+  }
+  .dos {
+    border-bottom: 5px solid rgb(143, 143, 143);
+    display: flex;
+  }
+  .dos p {
+    margin-top: 75px;
+  }
+  .tres {
+    height: 300px;
+    display: flex;
+  }
+
+  .boton {
+    position: absolute;
+    bottom: 50px;
+    margin-left: 120px;
+  }
+  .boton button {
+    background-color: #a7c71c;
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    animation: flash 1.8s infinite;
+  }
+  .animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes flash {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes flash {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0.5;
+    }
+  }
+  .flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+  }
+}
