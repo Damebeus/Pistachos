@@ -9,6 +9,7 @@ import MobileWelcome from "./components/Home/Welcome/MobileWelcome";
 import Welcome from "./components/Home/Welcome/Welcome";
 import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
+import Tutorial from "./components/Home/Tutorial/Tutorial";
 import SeleccionDeEnvio from "./components/Envio/SeleccionDeEnvio";
 import FormularioDeEnvio from "./components/Envio/FormularioDeEnvio";
 import SelecionDePago from "./components/Envio/SeleccionDePago";
