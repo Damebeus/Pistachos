@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch} from "react-redux";
-
 export default function SeleccionDeEnvio() {
-
-  const dispatch = useDispatch()
 
   let [carrito, setCarrito] = useState();
   const [totalPrice, setTotalPrice] = useState(1);
@@ -25,28 +21,25 @@ export default function SeleccionDeEnvio() {
   return (
     <div>
 
-      <Link to="/pago">
+      <Link to="/pago/envio1">
         <div > 
           <h3>Envio a San Nicolas y Mariano Moreno</h3>
           <h3> $150 </h3>
         </div>
       </Link>
 
-      <Link to="/pago">
+      <Link to="/pago/envio2">
         <div > 
           <h3>Countries</h3>
           <h3> $200 </h3>
         </div>
       </Link>
 
-      <Link to="/confirmacion">
+      <Link to="/pago/retiro">
         <div >
           <div>
             <h3>Retiro en Tienda</h3>
             <h3> Gratis </h3>
-          </div>
-          <div>
-            <h6>Jerónimo del Barco esquina Los Principios, Villa San Nicolas, Cordoba</h6>
           </div>
         </div>
       </Link>

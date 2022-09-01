@@ -11,7 +11,7 @@ import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
 import SeleccionDeEnvio from "./components/Envio/SeleccionDeEnvio";
 import FormularioDeEnvio from "./components/Envio/FormularioDeEnvio";
-// import Confirmacion from "./components/Envio/Confirmacion";
+import SelecionDePago from "./components/Envio/SeleccionDePago"
 
 function App() {
   return (
@@ -29,9 +29,8 @@ function App() {
           <Route exact path='/listado' component={ProductList} />
           <Route path='/cart' component={Cart} />
           <Route path='/envio' component={SeleccionDeEnvio} />
-          <Route path='/pago' component={FormularioDeEnvio} />
+          <Route path='/pago/:envio' component={SelecionDePago} />
           <Route path='/formulario' component={FormularioDeEnvio} />
-          {/* <Route path='/Confirmacion' component={Confirmacion} /> */}
         </Switch>
       </BrowserRouter>
     </div>

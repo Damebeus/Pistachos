@@ -10,20 +10,6 @@ export default function FormularioDeEnvio() {
 
   const [carrito, setCarrito] = useState([]);
 
-
-  // function cartSubmit() {
-  //   let array = carrito.map((p) => {
-  //     return {
-  //       productId: p.id,
-  //       amount: p.price * p.count,
-  //       quantity: p.count,
-  //     };
-  //   });
-
-  //   const payload = {}
-  //   dispatch(postOrden(payload))
-  // }
-
   const dispatch = useDispatch()
 
   const [input, setInput] = useState({

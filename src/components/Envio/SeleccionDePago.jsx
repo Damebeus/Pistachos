@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, } from "react-redux";
 import { postOrden } from "../../redux/action";
 
 export default function SeleccionDePago() {
 
+  const {envio} = useParams()
+
+  let shipping = null
+
   const dispatch = useDispatch()
-
+  
+  let metodoDePago = null
+  
   let [carrito, setCarrito] = useState();
-  const [totalPrice, setTotalPrice] = useState(1);
-  const [auxState, setAuxState] = useState("");
-
-    function cartSubmit() {
+  
+  function cartSubmit() {
     let productos = carrito.map((p) => {
+      if(envio === "envio1") {
+        shipping = "Envio a San Nicolas/Mariano Moreno"
+      }else if(envio === "envio2"){
+        shipping = "Envio a Countries"
+      }else{
+        shipping = "Retiro en Tienda"
+      }
       return {
         productId: p.id,
         amount: p.price * p.quantity,
@@ -21,60 +32,99 @@ export default function SeleccionDePago() {
     });
 
     const payload = {
-      shipping : "Envio a domicilio",
-      metodoDePago : "Mercado Pago",
+      shipping,
+      metodoDePago,
       productos
     }
+    console.log(payload)
     dispatch(postOrden(payload))
   }
 
-  function handlePrice() {
-    let aux = 0;
-    setAuxState(aux);
-    carrito && carrito.map((p) => (aux += p.price * p.quantity));
-    setTotalPrice(aux);
+  
+  function getValue () {
+    let checkbox1 = document.getElementById("Efectivo");
+    let checkbox2 = document.getElementById("Mercado Pago");
+    let checkbox3 = document.getElementById("Transferencia");
+    
+    if(checkbox1.checked === true){
+      metodoDePago = checkbox1.value
+    }if(checkbox2.checked === true){
+      metodoDePago = checkbox2.value
+    }if(checkbox3.checked === true){  
+      metodoDePago = checkbox3.value
+    }
   }
 
-  useEffect(() => {
-    setCarrito(JSON.parse(localStorage.getItem("carrito")));
-    handlePrice();
-  }, [auxState]);
-  
+  function uncheck(){
+    let checkbox1 = document.getElementById("Efectivo");
+    let checkbox2 = document.getElementById("Mercado Pago");
+    let checkbox3 = document.getElementById("Transferencia");
+
+    checkbox1.onclick = function(){
+    if(checkbox1.checked != false){
+       checkbox2.checked =null;
+       checkbox3.checked =null;
+    }
+}
+checkbox2.onclick = function(){
+    if(checkbox2.checked != false){
+        checkbox1.checked=null;
+        checkbox3.checked =null;
+    }
+  }
+
+  checkbox3.onclick = function(){
+    if(checkbox3.checked != false){
+       checkbox2.checked =null;
+       checkbox1.checked =null;
+    }
+}
+}
+
+useEffect(() => {
+  setCarrito(JSON.parse(localStorage.getItem("carrito")));
+},[]);
+
   return (
     <div>
+      <div>
+        <h2>
+        Selecion Del Metodo De Pago
+        </h2>
+      </div>
+      <div>
+        <label>
+          Efectivo <input id="Efectivo" type="radio" value="Efectivo" onClick={e => {uncheck()
+                                                                                    getValue()}} />
+        </label>
+      </div>
 
-      <Link to="/formulario"
-      onClick={e => cartSubmit()}>
-        <div > 
-          <h3>Envio a San Nicolas y Mariano Moreno</h3>
-          <h3> $150 </h3>
-        </div>
-      </Link>
+      <div>
+        <label>
+          Mercado Pago <input id="Mercado Pago" type="radio" value="Mercado Pago" onClick={e => {uncheck()
+                                                                                                getValue()}} />
+        </label>
+      </div>
 
-      <Link to="/formulario"
-      onClick={e => cartSubmit()}>
-        <div > 
-          <h3>Countries</h3>
-          <h3> $200 </h3>
-        </div>
-      </Link>
+      <div>
+        <label>
+          Transferencia <input id="Transferencia" type="radio" value="Transferencia" onClick={e => {uncheck()
+                                                                                                    getValue()}} />
+        </label>
+      </div>
 
-      <Link to="/confirmacion">
-        <div >
-          <div>
-            <h3>Retiro en Tienda</h3>
-            <h3> Gratis </h3>
-          </div>
-          <div>
-            <h6>Jerónimo del Barco esquina Los Principios, Villa San Nicolas, Cordoba</h6>
-          </div>
-        </div>
-      </Link>
-
-      <div > 
-      <h3>Pagás</h3>
-      <h3> $ {totalPrice} </h3>
+      <div>
+        <br/>
+        <Link to="/envio">
+        <button>ATRÁS</button>
+        </Link>
+        <br/>
+        <br/>
+        <Link to="/formulario">
+        <button onClick={e => cartSubmit()}>SIGUIENTE</button>
+        </Link>
       </div>
     </div>
+
   )
 }
