@@ -9,7 +9,9 @@ import MobileWelcome from "./components/Home/Welcome/MobileWelcome";
 import Welcome from "./components/Home/Welcome/Welcome";
 import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
-import Tutorial from "./components/Home/Tutorial/Tutorial";
+import SeleccionDeEnvio from "./components/Envio/SeleccionDeEnvio";
+import FormularioDeEnvio from "./components/Envio/FormularioDeEnvio";
+import SelecionDePago from "./components/Envio/SeleccionDePago";
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
           <Route exact path='/home' component={Home} />
           <Route exact path='/listado' component={ProductList} />
           <Route path='/cart' component={Cart} />
+          <Route path='/envio' component={SeleccionDeEnvio} />
+          <Route path='/pago/:envio' component={SelecionDePago} />
+          <Route path='/formulario' component={FormularioDeEnvio} />
         </Switch>
       </BrowserRouter>
     </div>

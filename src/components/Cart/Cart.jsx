@@ -8,26 +8,35 @@ function Cart() {
   const [totalPrice, setTotalPrice] = useState(1);
   let [carrito, setCarrito] = useState();
   const [auxState, setAuxState] = useState("");
-  let [count, setCount] = useState(0)
 
-  function handlePrice() {
-    let aux = 0;
-    setAuxState(aux);
-    carrito && carrito.map((p) => (aux += p.price * p.quantity));
-    setTotalPrice(aux);
-  }
+  function changeAmount(product, boolean){
+    if(boolean){
+      carrito.find(e => {
+        if (e.id === product.id){
+          e.quantity += 1
+          localStorage.setItem("carrito", JSON.stringify(carrito))
+        }
+      handlePrice();
 
-  function changeAmount(product, boolean) {
-    if (boolean) {
-      setCount(count += 1)
-      product.quantity += 1;
-      handlePrice();
-    } else {
-      setCount(count -= 1)
-      product.quantity -= 1;
-      handlePrice();
+    })
+
+    }else{
+      carrito.find(e => {
+        if (e.id === product.id){
+          e.quantity -= 1
+          localStorage.setItem("carrito", JSON.stringify(carrito))
+        }
+        handlePrice();
+    })
     }
-  }
+}
+
+function handlePrice() {
+  let aux = 0;
+  setAuxState(aux);
+  carrito && carrito.map((p) => (aux += p.price * p.quantity));
+  setTotalPrice(aux);
+}
 
   function removeProduct(product) {
     let array = carrito.filter((p) => p.id !== product.id);
@@ -37,16 +46,6 @@ function Cart() {
     setAuxState(aux);
     array && array.map((p) => (aux += p.price * p.quantity));
     setTotalPrice(aux);
-  }
-
-  function cartSubmit() {
-    let array = carrito.map((p) => {
-      return {
-        productId: p.id,
-        amount: p.price * p.quantity,
-        quantity: p.quantity,
-      };
-    });
   }
 
   useEffect(() => {
@@ -107,6 +106,10 @@ function Cart() {
         <div className={style.priceTotal}>total price: {totalPrice}</div>
 
         <div>
+          <button>
+            <Link to='/listado'>ATRÁS</Link>
+          </button>
+
           <button>
             <Link to='/envio'>SIGUIENTE</Link>
           </button>

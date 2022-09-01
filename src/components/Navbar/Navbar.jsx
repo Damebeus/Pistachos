@@ -61,7 +61,7 @@ function Navbar() {
               </Link>
             </button>
             <button class='nav-item' className={style.boton}>
-              <a class='nav-link active' aria-current='page' href='#'>
+              <a class='nav-link active' aria-current='page' href='/cart'>
                 Carrito
               </a>
             </button>

@@ -5,6 +5,7 @@ import {useSelector , useDispatch} from 'react-redux'
 import AdminCard from "./AdminCard/AdminCard";
 // import CardInfo from "../CardInfo/CardInfo";
 import { getAllProducts } from "../../redux/action";
+import SearchAdmin from "./SearchAdmin/SearchAdmin";
 
 function AdminHome() {
   const getUser = localStorage.getItem("useData");
@@ -22,6 +23,9 @@ function AdminHome() {
     {!getUser && !getPassword && navigate.push("/admin")}
       <AdminNav />
       <h1>Home Page</h1>
+      <div>
+          <SearchAdmin/>
+        </div>
       {
         allProducts && (
           <div>

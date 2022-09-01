@@ -20,6 +20,40 @@ export const EDIT_PRODUCT = "EDIT_PRODUCT"
 export const GET_ORDENES = "GET_ORDENES"
 export const ORDER_ASC = "ORDER_ASC"
 export const ORDER_DES = "ORDER_DES"
+export const GET_BY_PRODUCT = "GET_BY_PRODUCT"
+export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID"
+//Envio
+export const POST_ENVIO = "POST_ENVIO"
+export const POST_ORDEN = "POST_ORDEN"
+
+export function getProductById(id){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/productos/${id}`)
+      return dispatch({
+        type: GET_PRODUCT_BY_ID,
+        payload:result.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+export function getByProduct(name){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/productos?name=${name}`)
+      return dispatch({
+        type: GET_BY_PRODUCT,
+        payload: result.data
+      })
+    } catch (error) {
+      alert('Recipe not found')
+      console.log(error)
+    }
+  }
+}
 
 export function getOrderAsc(){
   return async function(dispatch){
@@ -224,4 +258,26 @@ export function removeOneToCart(id) {
       payload: id,
     });
   };
+}
+
+export function postEnvio(payload, id) {
+  return async function () {
+    console.log(payload)
+    const result = await axios.post(`https://pistachos.herokuapp.com/envio/${id}`, payload);
+    return {
+      type: POST_ENVIO,
+      payload: result.data,
+    }
+  }
+}
+
+export function postOrden(payload) {
+  return async function (dispatch) {
+    const result = await axios.post(`https://pistachos.herokuapp.com/ordenes`, payload);
+    console.log(result.data)
+    return dispatch( {
+      type: POST_ORDEN,
+      payload: result.data,
+    })
+  }
 }
