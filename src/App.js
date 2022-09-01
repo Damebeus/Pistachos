@@ -29,6 +29,7 @@ function App() {
           <Route exact path='/listado' component={ProductList} />
           <Route path='/cart' component={Cart} />
           <Route path='/envio' component={SeleccionDeEnvio} />
+          <Route path='/pago' component={FormularioDeEnvio} />
           <Route path='/formulario' component={FormularioDeEnvio} />
           {/* <Route path='/Confirmacion' component={Confirmacion} /> */}
         </Switch>

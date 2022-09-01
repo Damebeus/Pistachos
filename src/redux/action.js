@@ -23,11 +23,12 @@ export const ORDER_DES = "ORDER_DES"
 
 //Envio
 export const POST_ENVIO = "POST_ENVIO"
+export const POST_ORDEN = "POST_ORDEN"
 
 export function getOrderAsc(){
   return async function(dispatch){
     try {
-      const result = await axios.get(`https://pistachos.herokuapp.com/ordenes/asc`)
+      const result = await axios.get(`http://localhost:3001/ordenes/asc`)
       return dispatch({
         type: ORDER_ASC,
         payload: result.data
@@ -41,7 +42,7 @@ export function getOrderAsc(){
 export function getOrderDes(){
   return async function(dispatch){
     try {
-      const result = await axios.get(`https://pistachos.herokuapp.com/ordenes/desc`)
+      const result = await axios.get(`http://localhost:3001/ordenes/desc`)
       return dispatch({
         type: ORDER_ASC,
         payload: result.data
@@ -55,7 +56,7 @@ export function getOrderDes(){
 export function getAllOrders(){
   return async function(dispatch){
     try {
-      const result = await axios.get(`https://pistachos.herokuapp.com/ordenes/allOrders`)
+      const result = await axios.get(`http://localhost:3001/ordenes/allOrders`)
       return dispatch({
         type: GET_ORDENES,
         payload: result.data
@@ -68,7 +69,7 @@ export function getAllOrders(){
 
 export function postProduct(payload) {
   return async function () {
-    const result = await axios.post(`https://pistachos.herokuapp.com/productos`, payload);
+    const result = await axios.post(`http://localhost:3001/productos`, payload);
     return {
       type: POST_PRODUCT,
       payload: result.data,
@@ -79,7 +80,7 @@ export function postProduct(payload) {
 export function editProduct(payload,id){
   return async function (){
     console.log(payload);
-    const result = await axios.put(`https://pistachos.herokuapp.com/productos/${id}`, payload);
+    const result = await axios.put(`http://localhost:3001/productos/${id}`, payload);
     return{
       type: EDIT_PRODUCT,
       payload: result.data
@@ -91,7 +92,7 @@ export function getPromo() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/promo"
+        "http://localhost:3001/filtros/promo"
       );
       return dispatch({
         type: GET_PROMO,
@@ -105,7 +106,7 @@ export function getLomo() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/lomito"
+        "http://localhost:3001/filtros/lomito"
       );
       return dispatch({
         type: GET_LOMO,
@@ -119,7 +120,7 @@ export function getPizzas() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/pizza"
+        "http://localhost:3001/filtros/pizza"
       );
 
       return dispatch({
@@ -136,7 +137,7 @@ export function getHamburguesas() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/hamburguesa"
+        "http://localhost:3001/filtros/hamburguesa"
       );
       return dispatch({
         type: GET_HAMBURGUESAS,
@@ -152,7 +153,7 @@ export function getMilanesas() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/milanesa"
+        "http://localhost:3001/filtros/milanesa"
       );
       return dispatch({
         type: GET_MILANESAS,
@@ -167,7 +168,7 @@ export function getBebidas() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/bebidas"
+        "http://localhost:3001/filtros/bebidas"
       );
       return dispatch({
         type: GET_BEBIDAS,
@@ -183,7 +184,7 @@ export function getAllProducts() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/productos"
+        "http://localhost:3001/productos"
       );
       return dispatch({
         type: ALL_PRODUCTS,
@@ -199,7 +200,7 @@ export function getEmpanadas() {
   return async function (dispatch) {
     try {
       const result = await axios.get(
-        "https://pistachos.herokuapp.com/filtros/empanadas"
+        "http://localhost:3001/filtros/empanadas"
       );
       return dispatch({
         type: GET_EMPANADA,
@@ -229,24 +230,24 @@ export function removeOneToCart(id) {
   };
 }
 
-export function postEnvio(payload) {
+export function postEnvio(payload, id) {
   return async function () {
     console.log(payload)
-    // const result = await axios.post(`https://pistachos.herokuapp.com/envio`, payload);
+    const result = await axios.post(`http://localhost:3001/envio/${id}`, payload);
     return {
-      type: POST_PRODUCT,
-      // payload: result.data,
+      type: POST_ENVIO,
+      payload: result.data,
     }
   }
 }
 
 export function postOrden(payload) {
-  return async function () {
-    console.log(payload)
-    // const result = await axios.post(`https://pistachos.herokuapp.com/ordenes`, payload);
-    return {
-      type: POST_PRODUCT,
-      // payload: result.data,
-    }
+  return async function (dispatch) {
+    const result = await axios.post(`http://localhost:3001/ordenes`, payload);
+    console.log(result.data)
+    return dispatch( {
+      type: POST_ORDEN,
+      payload: result.data,
+    })
   }
 }

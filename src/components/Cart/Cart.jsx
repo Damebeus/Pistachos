@@ -10,21 +10,40 @@ function Cart() {
   const [auxState, setAuxState] = useState("");
   let [count, setCount] = useState(0)
 
-  function handlePrice() {
-    let aux = 0;
-    setAuxState(aux);
-    carrito && carrito.map((p) => (aux += p.price * p.quantity));
-    setTotalPrice(aux);
-  }
+  function findData(id, boolean){
+    if(boolean){
+      carrito.find(e => {
+        if (e.id === id){
+          e.quantity += 1
+          localStorage.setItem("carrito", JSON.stringify(carrito))
+        }
+    })
 
-  function changeAmount(product, boolean) {
-    if (boolean) {
-      setCount(count += 1)
-      product.quantity += 1;
-      handlePrice();
+    }else{
+      carrito.find(e => {
+        if (e.id === id){
+          e.quantity -= 1
+          localStorage.setItem("carrito", JSON.stringify(carrito))
+        }
+    })
+    }
+}
+
+function handlePrice() {
+  let aux = 0;
+  setAuxState(aux);
+  carrito && carrito.map((p) => (aux += p.price * p.quantity));
+  setTotalPrice(aux);
+}
+
+function changeAmount(product, boolean) {
+  if (boolean) {
+    setCount(count += 1)
+    findData(product.id, true)
+    handlePrice();
     } else {
       setCount(count -= 1)
-      product.quantity -= 1;
+      findData(product.id, false)
       handlePrice();
     }
   }
@@ -37,16 +56,6 @@ function Cart() {
     setAuxState(aux);
     array && array.map((p) => (aux += p.price * p.quantity));
     setTotalPrice(aux);
-  }
-
-  function cartSubmit() {
-    let array = carrito.map((p) => {
-      return {
-        productId: p.id,
-        amount: p.price * p.quantity,
-        quantity: p.quantity,
-      };
-    });
   }
 
   useEffect(() => {

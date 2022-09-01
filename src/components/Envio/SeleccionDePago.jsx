@@ -1,14 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch} from "react-redux";
+import { postOrden } from "../../redux/action";
 
-export default function SeleccionDeEnvio() {
+export default function SeleccionDePago() {
 
   const dispatch = useDispatch()
 
   let [carrito, setCarrito] = useState();
   const [totalPrice, setTotalPrice] = useState(1);
   const [auxState, setAuxState] = useState("");
+
+    function cartSubmit() {
+    let productos = carrito.map((p) => {
+      return {
+        productId: p.id,
+        amount: p.price * p.quantity,
+        quantity: p.quantity,
+      };
+    });
+
+    const payload = {
+      shipping : "Envio a domicilio",
+      metodoDePago : "Mercado Pago",
+      productos
+    }
+    dispatch(postOrden(payload))
+  }
 
   function handlePrice() {
     let aux = 0;
@@ -25,14 +43,16 @@ export default function SeleccionDeEnvio() {
   return (
     <div>
 
-      <Link to="/pago">
+      <Link to="/formulario"
+      onClick={e => cartSubmit()}>
         <div > 
           <h3>Envio a San Nicolas y Mariano Moreno</h3>
           <h3> $150 </h3>
         </div>
       </Link>
 
-      <Link to="/pago">
+      <Link to="/formulario"
+      onClick={e => cartSubmit()}>
         <div > 
           <h3>Countries</h3>
           <h3> $200 </h3>
