@@ -9,11 +9,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Milanesas from "./Milanesas/Milanesas";
 import Lomo from "./Lomo/Lomo";
 import Hamburguesas from "./Hamburguesas/Hamburguesas";
-import BigB from "./BigB/BigB";
+// import BigB from "./BigB/BigB";
 // import Cart from "../Cart/Cart";
 import style from "./ProductList.module.css";
 import Carrousel from "./Carrousel/Carrousel";
-import burger from "./burger.png";
+// import burger from "./burger.png";
 import logo from "./logomayor.png";
 import Categorias from "./Categorias/Categorias";
 import Navbar from "../Navbar/Navbar";
@@ -36,7 +36,7 @@ function ProductList() {
         <Milanesas />
         <Lomo />
         <Hamburguesas />
-        <BigB />
+        {/* <BigB /> */}
         <Bebidas />
         <Navbar />
       </div>
