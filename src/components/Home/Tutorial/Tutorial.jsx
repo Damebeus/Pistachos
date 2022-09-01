@@ -41,7 +41,7 @@ const Tutorial = () => {
         </div>
         <div className={style.boton}>
           <Link to='/tutorial'>
-            <button>Realizar pedido</button>
+            <button>Ir a la tienda</button>
           </Link>
         </div>
       </div>
