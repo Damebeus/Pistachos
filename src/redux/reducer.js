@@ -1,4 +1,5 @@
 import {
+  POST_ORDEN,
   GET_PROMO,
   GET_LOMO,
   GET_HAMBURGUESAS,
@@ -27,6 +28,7 @@ const InitialState = {
   promos: [],
   cart: [],
   ordenes: [],
+  orden:[]
 };
 
 export default function rootReducer(state = InitialState, action) {
@@ -42,6 +44,13 @@ export default function rootReducer(state = InitialState, action) {
         ...state,
         allProducts: action.payload
       }
+    case POST_ORDEN:{
+      console.log("estoy aca", action.payload)
+      return {
+        ...state,
+        orden: action.payload,
+      }
+    }
     case ORDER_DES:{
       return {
         ...state,

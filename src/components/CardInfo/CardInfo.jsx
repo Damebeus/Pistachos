@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./CardInfo.module.css";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 
 function CardInfo(product) {
   const [carrito, setCarrito] = useState([]);

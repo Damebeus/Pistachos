@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch} from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector} from "react-redux";
 import { postEnvio, postOrden } from "../../redux/action";
+import { Link } from "react-router-dom";
 import style from "./FormularioDeEnvio.module.css";
 
 export default function FormularioDeEnvio() {
 
+  const orden = useSelector((state) => state.orden)
+
   const [carrito, setCarrito] = useState([]);
 
-  function cartSubmit() {
-    let array = carrito.map((p) => {
-      return {
-        productId: p.id,
-        amount: p.price * p.count,
-        quantity: p.count,
-      };
-    });
-    dispatch(postOrden(array))
-  }
+
+  // function cartSubmit() {
+  //   let array = carrito.map((p) => {
+  //     return {
+  //       productId: p.id,
+  //       amount: p.price * p.count,
+  //       quantity: p.count,
+  //     };
+  //   });
+
+  //   const payload = {}
+  //   dispatch(postOrden(payload))
+  // }
 
   const dispatch = useDispatch()
 
@@ -50,7 +55,7 @@ export default function FormularioDeEnvio() {
     } else {
       e.preventDefault();
       alert("Envio completado correctamente");
-      dispatch(postEnvio(input))  
+      dispatch(postEnvio(input, orden.id))  
       setInput({
         manzana: "",
         lote: "",
@@ -145,7 +150,7 @@ export default function FormularioDeEnvio() {
             </div>
             <div>
               <button
-              onClick={e => cartSubmit()} 
+              // onClick={e => cartSubmit()} 
               type='submit'
               >
                 SIGUIENTE
