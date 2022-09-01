@@ -12,6 +12,8 @@ import {
   GET_ORDENES,
   ORDER_ASC,
   ORDER_DES,
+  GET_BY_PRODUCT,
+  GET_PRODUCT_BY_ID,
 } from "./action";
 
 const InitialState = {
@@ -31,7 +33,17 @@ const InitialState = {
 
 export default function rootReducer(state = InitialState, action) {
   switch (action.type) {
-
+    case GET_PRODUCT_BY_ID:
+      console.log(action.payload)
+      return {
+        ...state,
+        product: action.payload
+      }
+    case GET_BY_PRODUCT: 
+      return {
+        ...state,
+        allProducts: action.payload
+      }
     case POST_ORDEN:{
       console.log("estoy aca", action.payload)
       return {
@@ -39,7 +51,6 @@ export default function rootReducer(state = InitialState, action) {
         orden: action.payload,
       }
     }
-
     case ORDER_DES:{
       return {
         ...state,
