@@ -21,10 +21,23 @@ export const GET_ORDENES = "GET_ORDENES"
 export const ORDER_ASC = "ORDER_ASC"
 export const ORDER_DES = "ORDER_DES"
 export const GET_BY_PRODUCT = "GET_BY_PRODUCT"
-
+export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID"
 //Envio
 export const POST_ENVIO = "POST_ENVIO"
 
+export function getProductById(id){
+  return async function(dispatch){
+    try {
+      const result = await axios.get(`https://pistachos.herokuapp.com/productos/${id}`)
+      return dispatch({
+        type: GET_PRODUCT_BY_ID,
+        payload:result.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
 
 export function getByProduct(name){
   return async function(dispatch){
