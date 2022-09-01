@@ -8,23 +8,25 @@ function Cart() {
   const [totalPrice, setTotalPrice] = useState(1);
   let [carrito, setCarrito] = useState();
   const [auxState, setAuxState] = useState("");
-  let [count, setCount] = useState(0)
 
-  function findData(id, boolean){
+  function changeAmount(product, boolean){
     if(boolean){
       carrito.find(e => {
-        if (e.id === id){
+        if (e.id === product.id){
           e.quantity += 1
           localStorage.setItem("carrito", JSON.stringify(carrito))
         }
+      handlePrice();
+
     })
 
     }else{
       carrito.find(e => {
-        if (e.id === id){
+        if (e.id === product.id){
           e.quantity -= 1
           localStorage.setItem("carrito", JSON.stringify(carrito))
         }
+        handlePrice();
     })
     }
 }
@@ -35,18 +37,6 @@ function handlePrice() {
   carrito && carrito.map((p) => (aux += p.price * p.quantity));
   setTotalPrice(aux);
 }
-
-function changeAmount(product, boolean) {
-  if (boolean) {
-    setCount(count += 1)
-    findData(product.id, true)
-    handlePrice();
-    } else {
-      setCount(count -= 1)
-      findData(product.id, false)
-      handlePrice();
-    }
-  }
 
   function removeProduct(product) {
     let array = carrito.filter((p) => p.id !== product.id);
