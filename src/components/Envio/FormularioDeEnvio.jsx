@@ -8,8 +8,6 @@ export default function FormularioDeEnvio() {
 
   const orden = useSelector((state) => state.orden)
 
-  const [carrito, setCarrito] = useState([]);
-
   const dispatch = useDispatch()
 
   const [input, setInput] = useState({
@@ -52,10 +50,6 @@ export default function FormularioDeEnvio() {
       });
     }
   }
-
-  useEffect(() => {
-    setCarrito(JSON.parse(localStorage.getItem("carrito")));
-  }, []);
 
   return (
     <div>
@@ -136,7 +130,6 @@ export default function FormularioDeEnvio() {
             </div>
             <div>
               <button
-              // onClick={e => cartSubmit()} 
               type='submit'
               >
                 SIGUIENTE

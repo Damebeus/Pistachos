@@ -40,12 +40,11 @@ export default function SeleccionDePago() {
     dispatch(postOrden(payload))
   }
 
+  const checkbox1 = document.getElementById("Efectivo");
+  const checkbox2 = document.getElementById("Mercado Pago");
+  const checkbox3 = document.getElementById("Transferencia");
   
   function getValue () {
-    let checkbox1 = document.getElementById("Efectivo");
-    let checkbox2 = document.getElementById("Mercado Pago");
-    let checkbox3 = document.getElementById("Transferencia");
-    
     if(checkbox1.checked === true){
       metodoDePago = checkbox1.value
     }if(checkbox2.checked === true){
@@ -53,13 +52,10 @@ export default function SeleccionDePago() {
     }if(checkbox3.checked === true){  
       metodoDePago = checkbox3.value
     }
+    
   }
 
   function uncheck(){
-    let checkbox1 = document.getElementById("Efectivo");
-    let checkbox2 = document.getElementById("Mercado Pago");
-    let checkbox3 = document.getElementById("Transferencia");
-
     checkbox1.onclick = function(){
     if(checkbox1.checked != false){
        checkbox2.checked =null;
