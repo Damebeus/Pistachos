@@ -40,7 +40,7 @@ const Tutorial = () => {
           </div>
         </div>
         <div className={style.boton}>
-          <Link to='/tutorial'>
+          <Link to='/listado'>
             <button>Ir a la tienda</button>
           </Link>
         </div>
