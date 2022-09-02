@@ -57,11 +57,17 @@ function CardInfo(product) {
           <div className={style.titulo}>
             <h2>{product.name}</h2>
           </div>
-          <p>{product.description}</p>
-          <span>{"$" + product.price}</span>  
+          <div className={style.descripcion}>
+            <p>{product.description}</p>
+          </div>
+          <div className={style.precio}>
+            <span>{"$" + product.price}</span>
+          </div>
+          <div className={style.boton}>
             <button onClick={() => handleProduct(producto)}>
               Agregar al carrito
             </button>
+          </div>
         </div>
         <div className={style.columna2}>
           <div className={style.imagen}>
@@ -80,16 +86,16 @@ function CardInfo(product) {
               }}
               disabled={producto.quantity === 1 ? true : false}
             >
-              <label>-</label>
+              <label>➖</label>
             </button>
 
-            <label>{producto.quantity}</label>
+            <h4>{producto.quantity}</h4>
             <button
               onClick={() => {
                 changeAmount(producto, true);
               }}
             >
-              <label>+</label>
+              <label>➕</label>
             </button>
           </div>
         </div>

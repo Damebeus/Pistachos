@@ -58,7 +58,7 @@ function AdminProducts() {
 
   const [post, setPost] = useState({
     name: product.name,
-    description: "",
+    description: product.description,
     image: product.image,
     price: product.price,
     category: product.category,
@@ -79,24 +79,22 @@ function AdminProducts() {
         </div>
 
         <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="field">
+          <div className='field'>
             <label>Name:</label>
             <input
-              className="inputAd"
-              placeholder="Name"
-              type="text"
-              name="name"
+              placeholder='Name'
+              type='text'
+              name='name'
               value={post.name}
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className="field">
+          <div className='field'>
             <label>description:</label>
             <input
-              className="inputAd"
-              placeholder="description"
-              type="text"
-              name="description"
+              placeholder='description'
+              type='text'
+              name='description'
               value={post.description}
               onChange={(e) => handleChange(e)}
             />
@@ -106,23 +104,23 @@ function AdminProducts() {
             {/*    <p>Imagenes del producto</p> */}
             <div>
               {post.image ? (
-                <img src={post.image} alt="not" width="250" height="250" />
+                <img src={post.image} alt='not' width='250' height='250' />
               ) : (
                 <div>
                   <img
-                    src="https://www.pngfind.com/pngs/m/66-661092_png-file-upload-image-icon-png-transparent-png.png"
-                    alt="not"
-                    width="250"
-                    height="250"
+                    src='https://www.pngfind.com/pngs/m/66-661092_png-file-upload-image-icon-png-transparent-png.png'
+                    alt='not'
+                    width='250'
+                    height='250'
                   />
                 </div>
               )}
             </div>
             <div>
               <input
-                type="file"
-                id="file"
-                name="image"
+                type='file'
+                id='file'
+                name='image'
                 onChange={uploadImage}
               />
             </div>
@@ -132,19 +130,19 @@ function AdminProducts() {
           <div>
             <label>Precio:</label>
             <input
-              type="number"
+              type='number'
               value={post.price}
-              name="price"
+              name='price'
               onChange={(e) => handleChange(e)}
-              min="1"
-              max="10000"
+              min='1'
+              max='10000'
             />
           </div>
           <div>
             <label>Category</label>
             <select
               value={post.category}
-              name="category"
+              name='category'
               onChange={(e) => handleChange(e)}
             >
               <option></option>
@@ -161,7 +159,7 @@ function AdminProducts() {
             <label>stock</label>
             <select
               value={post.stock}
-              name="stock"
+              name='stock'
               onChange={(e) => handleChange(e)}
             >
               <option></option>
@@ -173,7 +171,7 @@ function AdminProducts() {
             <label>disable</label>
             <select
               value={post.disable}
-              name="disable"
+              name='disable'
               onChange={(e) => handleChange(e)}
             >
               <option></option>
@@ -181,8 +179,8 @@ function AdminProducts() {
               <option value={false}>no</option>
             </select>
           </div>
-          <div className="field">
-            <button type="submit">Agregar</button>
+          <div className='field'>
+            <button type='submit'>Agregar</button>
           </div>
         </form>
       </div>
