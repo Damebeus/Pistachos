@@ -43,7 +43,6 @@ export default function rootReducer(state = InitialState, action) {
     }
 
     case GET_PRODUCT_BY_ID:
-      console.log(action.payload)
       return {
         ...state,
         product: action.payload

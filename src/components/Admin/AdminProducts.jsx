@@ -43,13 +43,7 @@ function AdminProducts() {
     navigate.push(`/admin`);
   }
 
-  function handleChange(e) {
-    setPost({
-      ...post,
-      [e.target.name]: e.target.value,
-    });
-  }
-
+  
   useEffect(() => {
     dispatch(getProductById(id));
   }, [dispatch, id]);
@@ -65,7 +59,13 @@ function AdminProducts() {
     disable: product.disable,
     stock: product.stock,
   });
-
+  
+  function handleChange(e) {
+    setPost({
+      ...post,
+      [e.target.name]: e.target.value,
+    });
+  }
   const navigate = useHistory();
 
   return (
