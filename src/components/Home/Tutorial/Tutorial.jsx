@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Tutorial.module.css";
-import one from "./paso1.png";
-import two from "./paso2.png";
 import three from "./paso3.png";
+import two from "./paso2.png";
+import one from "./paso1.png";
 const Tutorial = () => {
   return (
     <div className={style.container}>
