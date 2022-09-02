@@ -6,11 +6,25 @@ import Swal from "sweetalert2";
 import { editProduct, getProductById } from "../../redux/action";
 
 function AdminProducts() {
+  
+  const product = useSelector((state) => state.product);
+
+  const [post, setPost] = useState({
+    name: product.name,
+    description: product.description,
+    image: product.image,
+    price: product.price,
+    category: product.category,
+    disable: product.disable,
+    stock: product.stock,
+  });
+  
+  
   const getUser = localStorage.getItem("useData");
   const getPassword = localStorage.getItem("passwordData");
   const { id } = useParams();
   const dispatch = useDispatch();
-
+  
   async function uploadImage(e) {
     const files = e.target.files;
     const data = new FormData();
@@ -48,17 +62,7 @@ function AdminProducts() {
     dispatch(getProductById(id));
   }, [dispatch, id]);
 
-  const product = useSelector((state) => state.product);
 
-  const [post, setPost] = useState({
-    name: product.name,
-    description: "",
-    image: product.image,
-    price: product.price,
-    category: product.category,
-    disable: product.disable,
-    stock: product.stock,
-  });
   
   function handleChange(e) {
     setPost({

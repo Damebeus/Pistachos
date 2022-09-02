@@ -13,6 +13,7 @@ import Tutorial from "./components/Home/Tutorial/Tutorial";
 import SeleccionDeEnvio from "./components/Envio/SeleccionDeEnvio";
 import FormularioDeEnvio from "./components/Envio/FormularioDeEnvio";
 import SelecionDePago from "./components/Envio/SeleccionDePago";
+import Confirmacion from "./components/Envio/Confirmacion";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='/envio' component={SeleccionDeEnvio} />
           <Route path='/pago/:envio' component={SelecionDePago} />
           <Route path='/formulario' component={FormularioDeEnvio} />
+          <Route path='/confirmacion/:id' component={Confirmacion} />
         </Switch>
       </BrowserRouter>
     </div>

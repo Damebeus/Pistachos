@@ -60,7 +60,7 @@ export default function FormularioDeEnvio() {
           <h1>Complete datos de envio</h1>
         </div>
         <div className={style.container}>
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form >
             <div>
               <p>Manzana:</p>
               <input
@@ -128,14 +128,14 @@ export default function FormularioDeEnvio() {
             </div>
             <div className={style.btnC}>
             </div>
+          </form>
             <div>
-              <button
-              type='submit'
-              >
+              <button onClick={(e) => handleSubmit(e)}>
+              <Link to={`/confirmacion/${orden.id}`}>
                 SIGUIENTE
+              </Link>
               </button>
             </div>
-          </form>
           <div className={style.backBtn}>
             <button>
                 <Link to={`/cart`}>Cancelar</Link>
