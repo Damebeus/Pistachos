@@ -274,7 +274,6 @@ export function postEnvio(payload, id) {
 export function postOrden(payload) {
   return async function (dispatch) {
     const result = await axios.post(`https://pistachos.herokuapp.com/ordenes`, payload);
-    console.log(result.data)
     return dispatch( {
       type: POST_ORDEN,
       payload: result.data,

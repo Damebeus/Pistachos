@@ -36,6 +36,7 @@ export default function SeleccionDePago() {
       metodoDePago,
       productos
     }
+    console.log(payload)
     dispatch(postOrden(payload))
   }
 
