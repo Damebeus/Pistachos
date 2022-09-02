@@ -21,8 +21,9 @@ function Empanadas() {
             {products.map((product) => {
               return (
                 <CardInfo
-                quantity={product.quantity}
-                id={product.id}
+                  quantity={product.quantity}
+                  id={product.id}
+                  description={product.description}
                   key={product.id}
                   img={product.image}
                   name={product.name}

@@ -26,6 +26,7 @@ function Pizza() {
                   id={product.id}
                   key={product.id}
                   img={product.image}
+                  description={product.description}
                   name={product.name}
                   price={product.price}
                 />
