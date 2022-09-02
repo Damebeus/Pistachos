@@ -13,7 +13,7 @@ export default function Confirmacion() {
 
     const orden = useSelector((state) => state.orden)
     const envio = useSelector((state) => state.envio)
-    
+
     let aux = 0;
     function handlePrice() {
         orden.products && orden.products.map((p) => (aux += p.price * p.orderline.quantity));
@@ -28,17 +28,6 @@ export default function Confirmacion() {
         }
     }
 
-    const confirmacion = {
-        id: orden.id,
-        barrio: envio.barrio,
-        manzana: envio.manzana,
-        lote: envio.lote,
-        productos: orden.products,
-        total: totalPrice,
-        metodoDePago: orden.metodoDePago,
-        tipoDeEnvio: orden.shipping,
-    }
-
       useEffect(() => {
         handlePrice();
         dispatch(getEnvioById(id))
@@ -47,25 +36,28 @@ export default function Confirmacion() {
 
   return (
     <div>
-        <br />
-        <p>Orden numero: {confirmacion.id}</p>
-        <p>Barrio: {confirmacion.barrio}</p>
-        <p>Manzana: {confirmacion.manzana}</p>
-        <p>Lote: {confirmacion.lote}</p>
-        <p>-------------------------------------------------------</p>
-        <p>Productos</p>
-        {
-            confirmacion.productos && confirmacion.productos.map(e => <p>{e.name}</p>)
-        }
-        <p>--------------------------------------------------------</p>
-        <p>Total: $ {confirmacion.total}</p>
-        <p>Metodo de Pago: {confirmacion.metodoDePago}</p>
-        <p>-------------------------------------------------------</p>
-        <p>{confirmacion.tipoDeEnvio}</p>
-        <button>Copiar</button>
-        <p></p>
-        <button>wpp</button>
-
+        {envio === null ? (<p>loading</p>): 
+        (
+        <div>
+            <br />
+            <p>Orden numero: {orden.id}</p>
+            <p>Barrio: {envio.barrio}</p>
+            <p>Manzana: {envio.manzana}</p>
+            <p>Lote: {envio.lote}</p>
+            <p>-------------------------------------------------------</p>
+            <p>Productos</p>
+            {
+                orden.products && orden.products.map(e => <p>{e.name}</p>)
+            }
+            <p>--------------------------------------------------------</p>
+            <p>Total: $ {totalPrice }</p>
+            <p>Metodo de Pago: {orden.metodoDePago}</p>
+            <p>-------------------------------------------------------</p>
+            <p>{orden.tipoDeEnvio}</p>
+            <button>Copiar</button>
+            <p></p>
+            <button>wpp</button>
+        </div>)}
     </div>
   )
 }
