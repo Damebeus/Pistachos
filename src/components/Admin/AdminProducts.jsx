@@ -58,7 +58,7 @@ function AdminProducts() {
 
   const [post, setPost] = useState({
     name: product.name,
-    description: product.image,
+    description: "",
     image: product.image,
     price: product.price,
     category: product.category,
