@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
-import { postEnvio, postOrden } from "../../redux/action";
+import { postEnvio} from "../../redux/action";
 import { Link } from "react-router-dom";
 import style from "./FormularioDeEnvio.module.css";
 

@@ -1,0 +1,17 @@
+.div_main {
+  display: flex;
+  flex-direction: column;
+  background: url(http://localhost:3000/static/media/bgw.2f82f65f6ae11ae543ee.jpg);
+  justify-content: center;
+  align-items: center;
+}
+
+.All_Cards {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}

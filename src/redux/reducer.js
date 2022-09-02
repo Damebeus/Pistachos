@@ -35,7 +35,6 @@ export default function rootReducer(state = InitialState, action) {
   switch (action.type) {
 
     case POST_ORDEN:{
-      console.log("estoy aca", action.payload)
       return {
         ...state,
         orden: action.payload,
@@ -43,7 +42,6 @@ export default function rootReducer(state = InitialState, action) {
     }
 
     case GET_PRODUCT_BY_ID:
-      console.log(action.payload)
       return {
         ...state,
         product: action.payload
@@ -122,7 +120,6 @@ export default function rootReducer(state = InitialState, action) {
     }
 
     case ADD_TO_CART:
-      // console.log(action.payload);
       return {
         ...state,
         cart: action.payload,

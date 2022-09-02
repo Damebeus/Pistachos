@@ -6,6 +6,7 @@ import AdminCard from "./AdminCard/AdminCard";
 // import CardInfo from "../CardInfo/CardInfo";
 import { getAllProducts } from "../../redux/action";
 import SearchAdmin from "./SearchAdmin/SearchAdmin";
+import "./AdminHome.css";
 
 function AdminHome() {
   const getUser = localStorage.getItem("useData");
@@ -27,11 +28,11 @@ function AdminHome() {
         <SearchAdmin />
       </div>
       {allProducts && (
-        <div>
+        <div className='div_main'>
           <div>
             <h2>Productos</h2>
           </div>
-          <div>
+          <div className='All_Cards'>
             {allProducts.map(function (item) {
               return (
                 <div key={item.id}>
@@ -40,11 +41,9 @@ function AdminHome() {
                     name={item.name}
                     img={item.image}
                     price={item.price}
+                    description={item.description}
                     id={item.id}
                   />
-                  <Link to={`/admin/products/${item.id}`}>
-                    <button>Editar Producto</button>
-                  </Link>
                 </div>
               );
             })}

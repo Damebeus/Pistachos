@@ -22,8 +22,8 @@ function Lomo() {
               return (
                 <div key={item.id}>
                   <CardInfo
-                  quantity={item.quantity}
-                  id={item.id}
+                    quantity={item.quantity}
+                    id={item.id}
                     img={item.image}
                     name={item.name}
                     description={item.description}

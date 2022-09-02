@@ -262,7 +262,6 @@ export function removeOneToCart(id) {
 
 export function postEnvio(payload, id) {
   return async function () {
-    console.log(payload)
     const result = await axios.post(`https://pistachos.herokuapp.com/envio/${id}`, payload);
     return {
       type: POST_ENVIO,
@@ -274,7 +273,6 @@ export function postEnvio(payload, id) {
 export function postOrden(payload) {
   return async function (dispatch) {
     const result = await axios.post(`https://pistachos.herokuapp.com/ordenes`, payload);
-    console.log(result.data)
     return dispatch( {
       type: POST_ORDEN,
       payload: result.data,
