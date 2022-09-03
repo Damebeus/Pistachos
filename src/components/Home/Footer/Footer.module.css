@@ -6,20 +6,20 @@
     height: 4vh;
     width: 100%;
     bottom: 0;
-    background-color: yellowgreen;
+    background-color: #198754;
   }
   .imagen {
     position: absolute;
-    background-color: yellow;
+    background-color: #198754;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-
     margin-top: -20px;
     text-align: center;
   }
   .imagen img {
     text-align: center;
     height: 30px;
+    margin-bottom: -25px;
   }
 }
