@@ -13,10 +13,10 @@ import Hamburguesas from "./Hamburguesas/Hamburguesas";
 // import Cart from "../Cart/Cart";
 import style from "./ProductList.module.css";
 import Carrousel from "./Carrousel/Carrousel";
-// import burger from "./burger.png";
 import logo from "./logomayor.png";
 import Categorias from "./Categorias/Categorias";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Home/Footer/Footer";
 
 function ProductList() {
   const { isLoading } = useAuth0;
@@ -39,6 +39,7 @@ function ProductList() {
         {/* <BigB /> */}
         <Bebidas />
         <Navbar />
+        <Footer />
       </div>
     </div>
   );
