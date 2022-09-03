@@ -26,13 +26,16 @@ export default function Confirmacion() {
         if (orden.shipping === "Envio a Countries"){
             setTotalPrice(aux + 200)
         }
+        else(
+            setTotalPrice(aux + 0)
+        )
     }
 
       useEffect(() => {
         handlePrice();
-        dispatch(getEnvioById(id))
         dispatch(getOrderById(id))
-      }, []);
+        dispatch(getEnvioById(id))
+      }, [totalPrice]);
 
   return (
     <div>
@@ -47,14 +50,14 @@ export default function Confirmacion() {
             <p>-------------------------------------------------------</p>
             <p>Productos</p>
             {
-                orden.products && orden.products.map(e => <p>{e.name}</p>)
+                orden.products && orden.products.map(e => <p>{e.orderline.quantity} * {e.name}</p>)
             }
             <p>--------------------------------------------------------</p>
-            <p>Total: $ {totalPrice }</p>
+            <p>Total: $ {totalPrice}</p>
             <p>Metodo de Pago: {orden.metodoDePago}</p>
             <p>-------------------------------------------------------</p>
             <p>{orden.tipoDeEnvio}</p>
-            <button>Copiar</button>
+            <button >Copiar</button>
             <p></p>
             <button>wpp</button>
         </div>)}
