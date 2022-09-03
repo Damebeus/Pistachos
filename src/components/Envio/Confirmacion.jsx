@@ -9,33 +9,13 @@ export default function Confirmacion() {
 
     const dispatch = useDispatch()
 
-    const [totalPrice, setTotalPrice] = useState(1);
-
     const orden = useSelector((state) => state.orden)
     const envio = useSelector((state) => state.envio)
 
-    let aux = 0;
-    function handlePrice() {
-        orden.products && orden.products.map((p) => (aux += p.price * p.orderline.quantity));
-        changeAmount()
-    }
-    function changeAmount(){
-        if(orden.shipping === "Envio a San Nicolas/Mariano Moreno"){
-            setTotalPrice(aux + 150)
-        }
-        if (orden.shipping === "Envio a Countries"){
-            setTotalPrice(aux + 200)
-        }
-        else(
-            setTotalPrice(aux + 0)
-        )
-    }
-
       useEffect(() => {
-        handlePrice();
-        dispatch(getOrderById(id))
-        dispatch(getEnvioById(id))
-      }, [totalPrice]);
+          dispatch(getOrderById(id))
+          dispatch(getEnvioById(id))
+      }, []);
 
       function copiarTexto(){
         let numOrd = document.getElementById("numero_orden").innerHTML        
@@ -58,7 +38,7 @@ export default function Confirmacion() {
 
   return (
     <div>
-        {envio === null ? (<p>loading</p>): 
+        {envio === null ?(<p>loading</p>): 
         (
         <div>
             <br />
@@ -69,13 +49,13 @@ export default function Confirmacion() {
             <p id="linea1">-------------------------------------------------------</p>
             <p id="productos">Productos</p>
             {
-                orden.products && orden.products.map(e => <p id="pName">{e.name}</p>)
+                orden.products && orden.products.map(e => <p id="pName">{e.orderline.quantity} * {e.name}</p>)
             }
             <p id="linea2">--------------------------------------------------------</p>
-            <p id="total">Total: $ {totalPrice }</p>
+            <p id="total">Total: $ {orden.totalPrice}</p>
             <p id="metodo">Metodo de Pago: {orden.metodoDePago}</p>
             <p id="linea3">-------------------------------------------------------</p>
-            <p id="tipoDeEnvio">{orden.tipoDeEnvio}</p>
+            <p id="tipoDeEnvio">Envio: {orden.shipping}</p>
             <button onClick={copiarTexto}>Copiar</button>
             <p></p>
             <button>wpp</button>

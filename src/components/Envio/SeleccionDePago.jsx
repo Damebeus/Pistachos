@@ -90,21 +90,24 @@ useEffect(() => {
       <div>
         <label>
           Efectivo <input id="Efectivo" type="radio" value="Efectivo" onClick={e => {uncheck()
-                                                                                    getValue()}} />
+                                                                                    getValue()}}
+                                                                                    required />
         </label>
       </div>
 
       <div>
         <label>
           Mercado Pago <input id="Mercado Pago" type="radio" value="Mercado Pago" onClick={e => {uncheck()
-                                                                                                getValue()}} />
+                                                                                                getValue()}}
+                                                                                                required />
         </label>
       </div>
 
       <div>
         <label>
           Transferencia <input id="Transferencia" type="radio" value="Transferencia" onClick={e => {uncheck()
-                                                                                                    getValue()}} />
+                                                                                                    getValue()}}
+                                                                                                    required />
         </label>
       </div>
 
