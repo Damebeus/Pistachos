@@ -27,6 +27,13 @@ function Navbar() {
         <div class='collapse navbar-collapse ' id='navbarNav'>
           <ul class='navbar-nav '>
             <button class='nav-item' className={style.boton}>
+              <Link to='promociones'>
+                <a class='nav-link active' href='#'>
+                  Promociones
+                </a>
+              </Link>
+            </button>
+            <button class='nav-item' className={style.boton}>
               <Link to='empanadas'>
                 <a class='nav-link active' href='#'>
                   Empanadas
