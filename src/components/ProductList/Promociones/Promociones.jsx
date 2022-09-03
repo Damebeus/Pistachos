@@ -11,7 +11,7 @@ function Promociones() {
     dispatch(getPromo());
   }, [dispatch]);
   return (
-    <div>
+    <div id='promociones'>
       {products && (
         <div>
           <div className={style.titulo}>
