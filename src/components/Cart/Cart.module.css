@@ -1,0 +1,110 @@
+@media screen and (max-width: 414px) {
+  .banner {
+    background-image: url("../ProductList/bgw.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .titulo {
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 25px; */
+  }
+  .titulo h1 {
+    font-family: "Merienda", cursive;
+    font-size: 35px;
+    margin-top: 20px;
+    color: #fff;
+  }
+  .banner img {
+    text-align: center;
+    height: 125px;
+    /*  margin-top: 10px; */
+  }
+  .containerglobal {
+    background-color: #bebebe;
+  }
+  .container2 {
+    margin-top: 15px;
+    display: flex;
+    /* border: 2px solid gainsboro; */
+  }
+  .container2 img {
+    margin: 5px;
+  }
+  .columna1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .info {
+    display: flex;
+    justify-content: space-around;
+    /*  background-color: wheat; */
+    width: 100%;
+  }
+  .name {
+    width: 150px;
+    height: 55px;
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .price {
+    margin-top: 15px;
+    border: 2px solid #198754;
+    border-radius: 15px;
+    width: 70px;
+    text-align: center;
+    color: #198754;
+  }
+  .quantity {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+  .quantity button {
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  .quantity span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
+  .remover button {
+    background-color: transparent;
+    border: none;
+    height: 5px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 4vh;
+    width: 100%;
+    bottom: 0;
+    background-image: url("../ProductList/bgw.jpg");
+  }
+  .footer button {
+    background-color: transparent;
+    border: none;
+    color: azure;
+  }
+  .footer span {
+    color: #fff;
+    text-decoration: #fff;
+  }
+  .priceTotal {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}

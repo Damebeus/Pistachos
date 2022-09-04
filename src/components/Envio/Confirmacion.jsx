@@ -8,13 +8,13 @@ export default function Confirmacion() {
 
   const dispatch = useDispatch();
 
-    const orden = useSelector((state) => state.orden)
-    const envio = useSelector((state) => state.envio)
+  const orden = useSelector((state) => state.orden);
+  const envio = useSelector((state) => state.envio);
 
-      useEffect(() => {
-          dispatch(getOrderById(id))
-          dispatch(getEnvioById(id))
-      }, []);
+  useEffect(() => {
+    dispatch(getOrderById(id));
+    dispatch(getEnvioById(id));
+  }, []);
 
   function copiarTexto() {
     let numOrd = document.getElementById("numero_orden").innerHTML;
@@ -68,7 +68,7 @@ export default function Confirmacion() {
           <p id='linea2'>
             --------------------------------------------------------
           </p>
-          <p id='total'>Total: $ {totalPrice}</p>
+          <p id='total'>Total: $ {orden.totalPrice}</p>
           <p id='metodo'>Metodo de Pago: {orden.metodoDePago}</p>
           <p id='linea3'>
             -------------------------------------------------------
