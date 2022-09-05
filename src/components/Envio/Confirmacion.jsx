@@ -52,7 +52,7 @@ export default function Confirmacion() {
                 orden.products && orden.products.map(e => <p id="pName">{e.orderline.quantity} * {e.name}</p>)
             }
             <p id="linea2">--------------------------------------------------------</p>
-            <p id="total">Total: $ {orden.totalprice}</p>
+            <p id="total">Total: $ {orden.totalPrice}</p>
             <p id="metodo">Metodo de Pago: {orden.metodoDePago}</p>
             <p id="linea3">-------------------------------------------------------</p>
             <p id="tipoDeEnvio">Envio: {orden.shipping}</p>
