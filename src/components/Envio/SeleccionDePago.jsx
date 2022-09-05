@@ -141,15 +141,15 @@ export default function SeleccionDePago() {
       </div>
 
       <div className={style.footer}>
-        <Link to='/cart'>
+        <Link to='/envio'>
           <button>
             <span>Atras</span>
           </button>
         </Link>
 
-        <Link to='/listado'>
+        <Link to='/formulario'>
           <button>
-            <span>Cancelar</span>
+            <span>Siguiente</span>
           </button>
         </Link>
       </div>
