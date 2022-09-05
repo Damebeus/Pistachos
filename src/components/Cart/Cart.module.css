@@ -82,6 +82,7 @@
     background-color: transparent;
     border: none;
     height: 5px;
+    margin-left: -40px;
   }
 
   .footer {

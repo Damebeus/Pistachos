@@ -6,7 +6,7 @@
     height: 200px;
     width: 100%;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
   .titulo {
     display: flex;
@@ -46,7 +46,9 @@
   }
   .card {
     background-color: #bebebe;
-    margin: 10px 20px 20px 20px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
     height: 100px;
     border-radius: 15px;
     box-shadow: 3px 7px 15px 5px #000000;
