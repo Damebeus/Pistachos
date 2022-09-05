@@ -5,6 +5,8 @@ import { getOrderById, getEnvioById} from "../../redux/action";
 
 export default function Confirmacion() {
 
+  const {id} = useParams()
+
   const dispatch = useDispatch();
 
   const orden = useSelector((state) => state.orden);
