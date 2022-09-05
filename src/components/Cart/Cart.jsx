@@ -1,42 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./Cart.module.css";
-
-
+import logo from "./logo.png";
 function Cart() {
-
   const [totalPrice, setTotalPrice] = useState(1);
   let [carrito, setCarrito] = useState();
   const [auxState, setAuxState] = useState("");
 
-  function changeAmount(product, boolean){
-    if(boolean){
-      carrito.find(e => {
-        if (e.id === product.id){
-          e.quantity += 1
-          localStorage.setItem("carrito", JSON.stringify(carrito))
-        }
-      handlePrice();
-
-    })
-
-    }else{
-      carrito.find(e => {
-        if (e.id === product.id){
-          e.quantity -= 1
-          localStorage.setItem("carrito", JSON.stringify(carrito))
+  function changeAmount(product, boolean) {
+    if (boolean) {
+      carrito.find((e) => {
+        if (e.id === product.id) {
+          e.quantity += 1;
+          localStorage.setItem("carrito", JSON.stringify(carrito));
         }
         handlePrice();
-    })
+      });
+    } else {
+      carrito.find((e) => {
+        if (e.id === product.id) {
+          e.quantity -= 1;
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
+        handlePrice();
+      });
     }
-}
+  }
 
-function handlePrice() {
-  let aux = 0;
-  setAuxState(aux);
-  carrito && carrito.map((p) => (aux += p.price * p.quantity));
-  setTotalPrice(aux);
-}
+  function handlePrice() {
+    let aux = 0;
+    setAuxState(aux);
+    carrito && carrito.map((p) => (aux += p.price * p.quantity));
+    setTotalPrice(aux);
+  }
 
   function removeProduct(product) {
     let array = carrito.filter((p) => p.id !== product.id);
@@ -53,10 +49,13 @@ function handlePrice() {
     handlePrice();
   }, [auxState]);
 
-  return(
-    <>
-      <div>
-        <h1>Carrito de compra</h1>
+  return (
+    <div className={style.container}>
+      <div className={style.banner}>
+        <div className={style.titulo}>
+          <h1>Carrito de compra</h1>
+        </div>
+        <img src={logo} />
       </div>
 
       <div className={style.containerproducts}>
@@ -66,31 +65,40 @@ function handlePrice() {
               return (
                 <div className={style.containerglobal} key={product.id}>
                   <div className={style.container2}>
-                  <img src={product.img} alt={product.name} width='150px' height='130px' /> 
-                    <div className={style.name}>
-                      <label>{product.name}</label>
-                    </div>
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      width='100px'
+                      height='100px'
+                    />
+                    <div className={style.info}>
+                      <div className={style.columna1}>
+                        <div className={style.name}>
+                          <label>{product.name}</label>
+                        </div>
+                        <div className={style.price}>
+                          <label>${product.price}</label>
+                        </div>
+                      </div>
 
-                    <div className={style.quantity}>
-                    <button
-                        onClick={() => changeAmount(product, false)}
-                        disabled={product.quantity === 1 ? true : false}
-                      >
-                        -
-                      </button>
-                      <label>{product.quantity}</label>
-                      <button
-                        onClick={() => changeAmount(product, true)}
-                      >
-                        +
-                      </button>
-                    </div>
-                    <div className={style.remover}>
-                      <label>Remover</label>
-                      <button onClick={() => removeProduct(product)}>x</button>
-                    </div>
-                    <div className={style.price}>
-                      <label> ${product.price}</label>
+                      <div className={style.quantity}>
+                        <button
+                          onClick={() => changeAmount(product, false)}
+                          disabled={product.quantity === 1 ? true : false}
+                        >
+                          <span>-</span>
+                        </button>
+                        <label>{product.quantity}</label>
+                        <button onClick={() => changeAmount(product, true)}>
+                          <span>+</span>
+                        </button>
+                      </div>
+                      <div className={style.remover}>
+                        {/*     <label>Remover</label> */}
+                        <button onClick={() => removeProduct(product)}>
+                          ❌
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -103,20 +111,25 @@ function handlePrice() {
             </div>
           )}
         </div>
-        <div className={style.priceTotal}>total price: {totalPrice}</div>
-
         <div>
-          <button>
-            <Link to='/listado'>ATRÁS</Link>
-          </button>
+          <div className={style.footer}>
+            <Link to='/listado'>
+              <button>
+                <span>ATRÁS</span>
+              </button>
+            </Link>
 
-          <button>
-            <Link to='/envio'>SIGUIENTE</Link>
-          </button>
+            <div className={style.priceTotal}>Precio total: ${totalPrice}</div>
+            <Link to='/envio'>
+              <button>
+                <span>SIGUIENTE</span>
+              </button>
+            </Link>
+          </div>
         </div>
+      </div>
     </div>
-    </>
-  )
+  );
 }
 
 export default Cart;

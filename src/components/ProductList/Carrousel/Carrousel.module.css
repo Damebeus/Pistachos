@@ -17,6 +17,7 @@
   .listado {
     display: flex;
     flex-direction: column;
+    margin-right: 10px;
   }
   .listado h1 {
     font-size: 30px;
@@ -42,6 +43,7 @@
   .imagen img {
     position: relative;
     margin-top: 25px;
+    height: 250px;
   }
   .listadoreloj {
     display: flex;
