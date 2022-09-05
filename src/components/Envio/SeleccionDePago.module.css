@@ -6,7 +6,8 @@
     height: 200px;
     width: 100%;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0px 6px 15px 5px #000000;
   }
   .titulo {
     display: flex;
@@ -31,6 +32,7 @@
     width: 100%;
     bottom: 0;
     background-image: url("../ProductList/bgw.jpg");
+    box-shadow: 0px -5px 15px 5px #000000;
   }
   .footer button {
     background-color: transparent;
