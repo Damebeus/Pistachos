@@ -64,10 +64,10 @@ export default function SeleccionDeEnvio() {
         </div>
       </div>
 
-      <div className={style.total}>
+      {/* <div className={style.total}>
         <h3>Precio actual</h3>
         <h3> $ {totalPrice} </h3>
-      </div>
+      </div> */}
       <div className={style.footer}>
         <Link to='/cart'>
           <button>

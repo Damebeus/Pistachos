@@ -41,9 +41,6 @@
     color: #fff;
     font-size: 20px;
   }
-  .countries {
-    text-decoration: none;
-  }
   .card {
     background-color: #bebebe;
     margin-top: 15px;
@@ -53,26 +50,21 @@
     height: 100px;
     box-shadow: 3px 7px 15px 5px #000000;
   }
+
   .contenido {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
     align-items: center;
-  }
-  .contenido h3 {
-    font-size: 20px;
-    font-weight: bold;
+    justify-content: space-around;
+    text-align: center;
   }
   .contenido h2 {
-    font-size: 17px;
-  }
-  .contenido button {
-    margin-bottom: 5px;
-  }
+    margin-top: 10%;
 
-  .total {
-    margin-top: 20px;
-    text-align: center;
+    width: 180px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .contenido input {
+    margin-top: 10%;
   }
 }
