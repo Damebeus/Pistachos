@@ -112,6 +112,7 @@ function Cart() {
           )}
         </div>
         <div>
+          <div className={style.footcontainer}></div>
           <div className={style.footer}>
             <Link to='/listado'>
               <button>

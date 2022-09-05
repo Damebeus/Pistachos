@@ -107,4 +107,9 @@
     font-size: 1.2rem;
     color: #fff;
   }
+  .footcontainer {
+    height: 5vh;
+    width: 100%;
+    bottom: 0;
+  }
 }
