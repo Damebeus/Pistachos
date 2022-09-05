@@ -102,11 +102,12 @@
   .footer span {
     color: #fff;
     text-decoration: #fff;
-    font-size: 20px;
+    font-size: 15px;
   }
   .priceTotal {
     font-size: 1.2rem;
     color: #fff;
+    font-weight: bold;
   }
   .footcontainer {
     height: 5vh;
