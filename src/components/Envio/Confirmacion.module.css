@@ -1,0 +1,46 @@
+@media screen and (max-width: 414px) {
+  .banner {
+    background-image: url("../ProductList/bgw.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0px 6px 15px 5px #000000;
+  }
+  .titulo {
+    display: flex;
+    justify-content: center;
+  }
+  .titulo h1 {
+    font-family: "Merienda", cursive;
+    font-size: 35px;
+    margin-top: 20px;
+    color: #fff;
+  }
+  .container {
+    /* background-color: violet; */
+    margin-left: 20px;
+  }
+  .columna {
+    /*  background-color: violet; */
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .columna h2 {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .subtitulo {
+    /* text-align: center; */
+    font-weight: bold;
+  }
+  .botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

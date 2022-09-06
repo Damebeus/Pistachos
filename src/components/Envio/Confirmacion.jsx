@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOrderById, getEnvioById } from "../../redux/action";
+import style from "./Confirmacion.module.css";
 
 export default function Confirmacion() {
   const { id } = useParams();
@@ -45,7 +46,7 @@ export default function Confirmacion() {
       tipoDeEnvio,
     ];
     navigator.clipboard.writeText(resultado);
-    alert("Texto Copiado ya puedes pegarlo por wsp");
+    alert("Texto Copiado, ya puedes pegarlo por wsp");
   }
 
   return (
@@ -54,37 +55,70 @@ export default function Confirmacion() {
         <p>loading</p>
       ) : (
         <div>
-          <br />
-          <p id='numero_orden'>Orden numero: {orden.id}</p>
-          <p id='barrio'>Barrio: {envio.barrio}</p>
-          <p id='manzana'>Manzana: {envio.manzana}</p>
-          <p id='lote'>Lote: {envio.lote}</p>
-          <p id='linea1'>
-            -------------------------------------------------------
-          </p>
-          <br />
-          <p id='productos'>Productos</p>
-          {orden.products &&
-            orden.products.map((e) => (
-              <p id='pName'>
-                {e.orderline.quantity} * {e.name}
-              </p>
-            ))}
-          <p id='linea2'>
-            --------------------------------------------------------
-          </p>
-          <br />
-          <p id='total'>Total: $ {orden.totalPrice}</p>
-          <p id='metodo'>Metodo de Pago: {orden.metodoDePago}</p>
-          <p id='linea3'>
-            -------------------------------------------------------
-          </p>
-          <p id='tipoDeEnvio'>Envio: {orden.shipping}</p>
-          <button onClick={copiarTexto}>Copiar</button>
-          <p></p>
-          <a href={"https://wa.me/543541297187"}>
-            <button>Whatsapp</button>
-          </a>
+          <div className={style.banner}>
+            <div className={style.titulo}>
+              <h1>Confirma tu pedido</h1>
+            </div>
+          </div>
+          <div className={style.container}>
+            <div className={style.columna}>
+              <h2 id='numero_orden'>Orden numero: </h2>
+              <p>{orden.id}</p>
+            </div>
+            <div className={style.columna}>
+              <h2 id='barrio'>Barrio: </h2>
+              <p>{envio.barrio}</p>
+            </div>
+            <div className={style.columna}>
+              <h2 id='manzana'>Manzana: </h2>
+              <p>{envio.manzana}</p>
+            </div>
+            <div className={style.columna}>
+              <h2 id='lote'>Lote:</h2>
+              <p> {envio.lote}</p>
+            </div>
+            <p id='linea1'>
+              -------------------------------------------------------
+            </p>
+            <div className={style.subtitulo}>
+              <h2 id='productos'>Productos</h2>
+            </div>
+
+            {orden.products &&
+              orden.products.map((e) => (
+                <p id='pName'>
+                  {e.orderline.quantity} * {e.name}
+                </p>
+              ))}
+
+            <p id='linea2'>
+              --------------------------------------------------------
+            </p>
+            <div className={style.columna}>
+              <h2 id='total'>Total:</h2>
+              <p> $ {orden.totalPrice}</p>
+            </div>
+
+            <div className={style.columna}>
+              <h2 id='metodo'>Metodo de Pago:</h2>
+              <p> {orden.metodoDePago}</p>
+            </div>
+
+            <p id='linea3'>
+              -------------------------------------------------------
+            </p>
+            <div className={style.columna}>
+              <h2 id='tipoDeEnvio'>Envio:</h2>
+              <p> {orden.shipping}</p>
+            </div>
+          </div>
+          <div className={style.botones}>
+            <button onClick={copiarTexto}>Copiar</button>
+            <p></p>
+            <a href={"https://wa.me/543541297187"}>
+              <button>Whatsapp</button>
+            </a>
+          </div>
         </div>
       )}
     </div>

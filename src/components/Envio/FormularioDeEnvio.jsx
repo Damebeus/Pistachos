@@ -123,7 +123,6 @@ export default function FormularioDeEnvio() {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className={style.btnC}></div>
         </form>
 
         <div className={style.footer}>
@@ -139,8 +138,6 @@ export default function FormularioDeEnvio() {
           </Link>
         </div>
       </div>
-      <br />
-      <br />
     </div>
   );
 }
