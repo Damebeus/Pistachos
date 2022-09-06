@@ -82,7 +82,9 @@ export default function Confirmacion() {
           <p id='tipoDeEnvio'>Envio: {orden.shipping}</p>
           <button onClick={copiarTexto}>Copiar</button>
           <p></p>
-          <button>wpp</button>
+          <a href={"https://wa.me/543541297187"}>
+            <button>Whatsapp</button>
+          </a>
         </div>
       )}
     </div>
