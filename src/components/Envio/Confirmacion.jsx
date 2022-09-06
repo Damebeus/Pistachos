@@ -113,10 +113,10 @@ export default function Confirmacion() {
             </div>
           </div>
           <div className={style.botones}>
-            <button onClick={copiarTexto}>Copiar</button>
+            <button onClick={copiarTexto}>Copiar pedido</button>
             <p></p>
             <a href={"https://wa.me/543541297187"}>
-              <button>Whatsapp</button>
+              <button>Ir al Whatsapp</button>
             </a>
           </div>
         </div>

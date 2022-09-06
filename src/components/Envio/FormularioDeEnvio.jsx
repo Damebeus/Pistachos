@@ -124,7 +124,6 @@ export default function FormularioDeEnvio() {
             />
           </div>
         </form>
-
         <div className={style.footer}>
           <Link to={`/cart`}>
             <button>
