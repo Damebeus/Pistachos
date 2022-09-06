@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import AdminNav from "./AdminNav/AdminNav";
+  import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Swal from "sweetalert2";
 import { editProduct, getProductById } from "../../redux/action";
+import AdminNav from "./AdminNav/AdminNav";
+import { useHistory, useParams, Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import styles from "./AdminProducts.module.css";
 
 function AdminProducts() {
-  const getUser = localStorage.getItem("useData");
-  const getPassword = localStorage.getItem("passwordData");
+
+  const [currentUser, setCurrentUser] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
+
   const { id } = useParams();
   const dispatch = useDispatch();
-
+  const navigate = useHistory();
+  
   async function uploadImage(e) {
     const files = e.target.files;
     const data = new FormData();
@@ -22,16 +26,16 @@ function AdminProducts() {
         method: "POST",
         body: data,
       }
-    );
-
-    const file = await res.json();
-    const aux = file.secure_url;
-    setPost({
-      ...post,
-      image: aux,
-    });
+      );
+      
+      const file = await res.json();
+      const aux = file.secure_url;
+      setPost({
+        ...post,
+        image: aux,
+      });
   }
-
+  
   async function handleSubmit(e) {
     e.preventDefault();
     dispatch(editProduct(post, id));
@@ -39,18 +43,30 @@ function AdminProducts() {
       "Producto editado!",
       "Los clientes ya pueden disfrutar del producto",
       "success"
-    );
-    navigate.push(`/admin`);
-  }
+      );
+      navigate.push(`/admin`);
+    }
+    
+    function handleChange(e) {
+      setPost({
+        ...post,
+        [e.target.name]: e.target.value,
+      });
+    }
 
-  
-  useEffect(() => {
-    dispatch(getProductById(id));
-  }, [dispatch, id]);
-
-  const product = useSelector((state) => state.product);
-
-  const [post, setPost] = useState({
+    useEffect(() => {
+      dispatch(getProductById(id));
+      const user = localStorage.getItem("useData");
+      const password = localStorage.getItem("passwordData");
+      if (user || password) {
+        setCurrentUser(user);
+        setCurrentPassword(password)
+      }
+    }, [dispatch, id]);
+    
+    const product = useSelector((state) => state.product);
+    
+    const [post, setPost] = useState({
     name: product.name,
     description: product.description,
     image: product.image,
@@ -60,63 +76,49 @@ function AdminProducts() {
     stock: product.stock,
   });
   
-  function handleChange(e) {
-    setPost({
-      ...post,
-      [e.target.name]: e.target.value,
-    });
-  }
-  const navigate = useHistory();
-
+  
   return (
-    <>
-      {" "}
-      {!getUser && !getPassword && navigate.push("/admin")}
-      <div>
-        <AdminNav />
+    <div>
+      {currentPassword === "Pistachos" && currentUser === 12345 ? (
+        navigate.push("/admin")
+      ) :(
         <div>
-          <h1>Editar Producto</h1>
-        </div>
-
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <div className='field'>
-            <label>Name:</label>
+          <AdminNav />
+          <div className={styles.container}>
+            <div className={styles.titulin}>
+              <h1>Editar Producto</h1>
+            </div>
+            <form onSubmit={(e) => handleSubmit(e)}>
+          <div className={styles.nombre}>
             <input
-              placeholder='Name'
               type='text'
-              name='name'
               value={post.name}
+              name='name'
+              placeholder='Name'
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className='field'>
-            <label>description:</label>
-            <input
-              placeholder='description'
+          <div className={styles.description}>
+            <textarea
               type='text'
-              name='description'
               value={post.description}
+              placeholder='description'
+              name='description'
               onChange={(e) => handleChange(e)}
             />
           </div>
 
           <div>
-            {/*    <p>Imagenes del producto</p> */}
-            <div>
-              {post.image ? (
-                <img src={post.image} alt='not' width='250' height='250' />
-              ) : (
-                <div>
-                  <img
-                    src='https://www.pngfind.com/pngs/m/66-661092_png-file-upload-image-icon-png-transparent-png.png'
-                    alt='not'
-                    width='250'
-                    height='250'
-                  />
+            <div className={styles.cuadroImg}>
+                  {post.image ? (
+                    <img src={post.image} alt='not' width='250' height='250' />
+                    ) : (
+                    <div className={styles.img}>
+                      <img src='https://www.pngfind.com/pngs/m/66-661092_png-file-upload-image-icon-png-transparent-png.png' alt='not' width='250' height='250' />
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-            <div>
+            <div className={styles.botonimg}>
               <input
                 type='file'
                 id='file'
@@ -127,19 +129,18 @@ function AdminProducts() {
             <br />
           </div>
 
-          <div>
-            <label>Precio:</label>
+          <div className={styles.precio}>
+                <p>Precio</p>
             <input
               type='number'
               value={post.price}
               name='price'
               onChange={(e) => handleChange(e)}
               min='1'
-              max='10000'
             />
           </div>
-          <div>
-            <label>Category</label>
+          <div className={styles.category}>
+          <p>Categoria:</p>
             <select
               value={post.category}
               name='category'
@@ -155,8 +156,8 @@ function AdminProducts() {
               <option>Promo</option>
             </select>
           </div>
-          <div>
-            <label>stock</label>
+          <div className={styles.stock}>
+            <p>Stock:</p>
             <select
               value={post.stock}
               name='stock'
@@ -167,8 +168,8 @@ function AdminProducts() {
               <option value={false}>no</option>
             </select>
           </div>
-          <div>
-            <label>disable</label>
+          <div className={styles.desactivar}>
+            <p>disable</p>
             <select
               value={post.disable}
               name='disable'
@@ -178,14 +179,24 @@ function AdminProducts() {
               <option value={true}>si</option>
               <option value={false}>no</option>
             </select>
-          </div>
-          <div className='field'>
-            <button type='submit'>Agregar</button>
-          </div>
+          </div >
+          <div className={styles.botones}>
+                <div className={styles.crear}>
+                  <button type='submit'>Editar</button>
+                </div>
+                <div className={styles.cancelar}>
+                  <span>
+                    <Link to={`/admin`}>Cancelar</Link>
+                  </span>
+                </div>
+              </div>
         </form>
-      </div>
-    </>
+          </div>
+        </div>
+    )}
+    </div>
   );
+
 }
 
-export default AdminProducts;
+export default AdminProducts; 

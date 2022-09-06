@@ -1,0 +1,219 @@
+.container{
+    width: 45vw;
+    height: 100vh;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    /* background-color: #6b35e8; */
+  /*     border-left: #636363 solid 2px;
+    border-right: #636363 solid 2px; */
+    border: #636363 solid 2px;
+  
+    
+  }
+  .container form{
+    width: 80%;
+    margin-top: 20px;
+    
+  }
+  .container p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #636363;
+    margin-bottom: 10px;
+  }
+  .cuadroImg{
+  margin-left: 32%;
+  position: relative;
+  margin-top: 25px;
+  
+  }
+  .botonimg{
+  margin-left:32%;
+  position: relative;
+  }
+  
+   .titulin{
+  margin-top: 100px;
+  position: absolute;
+    top: -15px;
+    left: 39.3vw;
+   }
+  .titulin h1{
+    color: #050505;
+    font-family: 'Source Sans Pro', sans-serif ;
+    text-transform: uppercase;
+    font-size: 3em;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    position: relative;
+  }
+  
+  .nombre input{
+  font-size: 20px;
+  height: 35px;
+  width: 100%;
+  border-color: #6b35e8;
+  outline: transparent;
+  box-sizing: border-box;
+  }
+  .nombre ::placeholder{
+  font-size: 20px;
+  margin-top: -5px;
+  padding-left: 10px;
+  }
+  
+  
+  
+  .description{
+  margin-top: 25px;
+  }
+  .description textarea{
+  font-size: 20px;
+  height: 10vh;
+  width: 100%;
+  text-align: initial;
+  border-color: #6b35e8;
+  outline: transparent;
+  padding:10px;
+  box-sizing: border-box;
+  
+  }
+
+  .precio input{
+    font-size: 20px;
+    height: 35px;
+    width: 100%;
+    border-color: #6b35e8;
+    outline: transparent;
+    box-sizing: border-box;
+  }
+  .precio ::placeholder{
+  
+    padding-left: 10px;
+  }
+  
+  .category{
+    margin-top: 25px;
+  }
+  .category select{
+    font-size: 20px;
+    height: 35px;
+    width: 100%;
+    border-color: #6b35e8;
+    outline: transparent;
+    box-sizing: border-box;
+  }
+  .stock{
+    margin-top: 25px;
+  }
+  .stock select{
+    font-size: 20px;
+    height: 35px;
+    width: 100%;
+    border-color: #6b35e8;
+    outline: transparent;
+    box-sizing: border-box;
+  }
+  .destacar select{
+    font-size: 20px;
+    height: 35px;
+    width: 100%;
+    border-color: #6b35e8;
+    outline: transparent;
+    box-sizing: border-box;
+  }
+  
+  
+  .crear{
+    margin-top: 25px;
+  
+  }
+  .crear span{
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      width: 15vh;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black ;
+      background-color: #E3EDFB;
+      cursor: pointer;
+  }
+  .crear span:hover{
+      background-color: #66688D;
+      transition: .5s;
+      color: white;
+   
+  }
+  .cancelar{
+    margin-top: 25px;
+  
+    
+    
+  }
+  .cancelar span{
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    width: 15vh;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black ;
+    background-color: #E3EDFB;
+    cursor: pointer;
+    text-decoration: none
+  }
+  .cancelar a{
+    color: #050505;
+    text-decoration: none
+  }
+  .cancelar span:hover{
+    background-color: #66688D;
+    transition: .5s;
+    color: white;
+    text-decoration: none
+  }
+  .botones{
+    display: flex;
+  /* background-color: #6b35e8; */
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    
+  }
+  
+  .crear button{
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    width: 15vh;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black ;
+    background-color: #E3EDFB;
+    cursor: pointer;
+    border-color: transparent;
+    text-decoration: none
+  }
+  .crear button:hover{
+    background-color: #66688D;
+    transition: .5s;
+    color: white;
+  }
+  .desactivar select {
+    font-size: 20px;
+    height: 35px;
+    width: 100%;
+    border-color: #6b35e8;
+    outline: transparent;
+    box-sizing: border-box;
+  }

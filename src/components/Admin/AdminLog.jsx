@@ -24,10 +24,10 @@ function Admin() {
         getUser&&getPassword?
         <AdminHome/>:
       <form onSubmit={handleSubmit}>
-        <label htmlFor="">User</label>
-        <input type="text" name="user" ref={user} />
-        <label htmlFor="">Password</label>
-        <input type="password" ref={password} name="password" />
+        <label htmlFor="">User</label><br />
+        <input type="text" name="user" ref={user} /><br />
+        <label htmlFor="">Password</label><br />
+        <input type="password" ref={password} name="password" /><br />
         <input type="submit" />
       </form>
       }

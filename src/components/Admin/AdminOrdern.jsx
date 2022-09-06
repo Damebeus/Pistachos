@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import AdminNav from "./AdminNav/AdminNav";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllOrders, getOrderAsc, getOrderDes } from "../../redux/action";
-import SearchAdmin from "./SearchAdmin/SearchAdmin";
 
 function AdminOrdern() {
   const getUser = localStorage.getItem("useData");
@@ -44,27 +43,36 @@ function AdminOrdern() {
         </div>
         {allOrdenes && (
           <div>
-            {allOrdenes.map(function (item) {
+            {allOrdenes.map(productos => {
+              const envio = {...productos.envio}
               return (
-                <div key={item.id}>
-                  <p>Dia del Pedido:{item.buyDate}</p>
+                <div key={productos.id}>
+                  <p>----------------------------------------------------------------------------</p>
+                  <h6>Orden Numero: {productos.id}</h6>
+                  <p>Dia del Pedido:{productos.buyDate}</p>
                   <br/>
-                  <p>Domicilio:{item.envio}</p>
-                  <br/>
-                  <p>Tipo de Entrega{item.shipping}</p>
                   <div>
+                    <h4>Envio:</h4>
+                    <p>Manzana: {envio.manzana}</p>
+                    <p>Lote: {envio.lote}</p>
+                    <p>Barrio: {envio.barrio}</p>
+                    <p>Telefono: {envio.telefono}</p>
+                    <p>Nombre Completo: {envio.nombreCompleto}</p>
+                  </div>
+                  <p>Tipo de Entrega: {productos.shipping}</p>
+                  <br />
+                  <div>
+                    <h4>Productos:</h4>
                     {
-                      item.products.map((e)=> {
+                      productos.products.map((e)=> {
                         return (
                           <div key={e.id}>
-                            <p>Nombre del Producto:{e.name}</p>
-                            <p>Categoria del Producto{e.category}</p>
-                            <p>Cantidad:{e.orderline.quantity}</p>
-                            <p>Precio:{e.orderline.amount}</p>
+                            <p>{e.orderline.quantity} * {e.name}</p>
                           </div>
                         )
                       })
                     }
+                    <p>Total: {productos.totalPrice}</p>
                   </div>
                 </div>
               );

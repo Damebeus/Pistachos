@@ -57,15 +57,11 @@ export function getEnvioById(id){
 
 export function getProductById(id){
   return async function(dispatch){
-    try {
-      const result = await axios.get(`https://pistachos.herokuapp.com/productos/${id}`)
+      const data = await axios.get(`https://pistachos.herokuapp.com/productos/${id}`)
       return dispatch({
         type: GET_PRODUCT_BY_ID,
-        payload:result.data
+        payload:data.data
       })
-    } catch (error) {
-      console.log(error)
-    }
   }
 }
 

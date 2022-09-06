@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { postProduct } from "../../redux/action";
 import AdminNav from "./AdminNav/AdminNav";
+import styles from "./AdminCreate.module.css"
 
 function validate(post) {
   let errors = {};
@@ -107,8 +108,8 @@ function AddFood() {
     <> { !getUser && !getPassword && navigate.push('/admin') }
     <div className="flex">
       <AdminNav/>
-      <div className="card">
-        <div className="card_header">
+      <div className={styles.container}>
+        <div className={styles.titulin}>
           <h1 className="form_heading">Edit Product</h1>
         </div>
         <form
@@ -116,8 +117,7 @@ function AddFood() {
             handleSubmit(e);
           }}
         >
-          <div className="field">
-            <label>Name:</label>
+          <div className={styles.nombre}>
             <input
               className="inputAd"
               placeholder="Name"
@@ -128,9 +128,8 @@ function AddFood() {
             />
             {errors.name && <p>{errors.name}</p>}
           </div>
-          <div className="field">
-            <label>description:</label>
-            <input
+          <div className={styles.description}>
+            <textarea
               className="inputAd"
               placeholder="description"
               type="text"
@@ -143,7 +142,7 @@ function AddFood() {
 
           <div>
             {/*    <p>Imagenes del producto</p> */}
-            <div>
+            <div className={styles.cuadroImg}>
               {post.image ? (
                 <img src={post.image} alt="not" width="250" height="250" />
               ) : (
@@ -157,7 +156,7 @@ function AddFood() {
                 </div>
               )}
             </div>
-            <div>
+            <div className={styles.botonimg}>
               <input
                 type="file"
                 id="file"
@@ -168,8 +167,8 @@ function AddFood() {
             <br />
           </div>
 
-          <div>
-            <label>Precio:</label>
+          <div className={styles.precio}>
+            <p>Precio:</p>
             <input
               type="number"
               value={post.price}
@@ -179,7 +178,7 @@ function AddFood() {
               max="10000"
             />
           </div>
-          <div>
+          <div className={styles.category}>
             <label>Category</label>
             <select
                   value={post.category}
@@ -196,17 +195,17 @@ function AddFood() {
                   <option>promo</option>
             </select>
           </div>
-          <div className="field">
-            <button type='submit'>Agregar</button>
-          </div>
+          <div className={styles.botones}>
+                <div className={styles.crear}>
+                  <button type='submit'>Crear</button>
+                </div>
+                <div className={styles.cancelar}>
+                  <span>
+                    <Link to={`/admin`}>Cancelar</Link>
+                  </span>
+                </div>
+              </div>
         </form>
-        {/* {
-        input.diets.map(e =>
-        <div className="divOcc">
-            <p>{e}</p>
-            <button className="buttonX" onClick={() => handleDelete(e)}>X</button>
-            </div>
-            )}  */}
       </div>
     </div>
     </>
