@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postEnvio } from "../../redux/action";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import style from "./FormularioDeEnvio.module.css";
 
 export default function FormularioDeEnvio() {
   const orden = useSelector((state) => state.orden);
+
+ const history = useHistory()
 
   const dispatch = useDispatch();
 
@@ -39,6 +41,7 @@ export default function FormularioDeEnvio() {
       e.preventDefault();
       alert("Envio completado correctamente");
       dispatch(postEnvio(input, orden.id));
+      history.push(`/confirmacion/${orden.id}`)
       setInput({
         manzana: "",
         lote: "",
@@ -47,6 +50,7 @@ export default function FormularioDeEnvio() {
         nombreCompleto: "",
         referencia: "",
       });
+
     }
   }
 
@@ -130,11 +134,9 @@ export default function FormularioDeEnvio() {
               <span>Cancelar</span>
             </button>
           </Link>
-          <Link to={`/confirmacion/${orden.id}`}>
             <button onClick={(e) => handleSubmit(e)}>
               <span> Siguiente</span>
             </button>
-          </Link>
         </div>
       </div>
     </div>
