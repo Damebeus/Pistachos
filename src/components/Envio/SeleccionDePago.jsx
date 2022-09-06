@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postOrden } from "../../redux/action";
+import style from "./SeleccionDePago.module.css";
+import logo from "./logo.png";
 
 export default function SeleccionDePago() {
+  const { envio } = useParams();
 
-  const {envio} = useParams()
+  let shipping = null;
 
-  let shipping = null
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-  
-  let metodoDePago = null
-  
+  let metodoDePago = null;
+
   let [carrito, setCarrito] = useState();
-  
+
   function cartSubmit() {
     let productos = carrito.map((p) => {
-      if(envio === "envio1") {
-        shipping = "Envio a San Nicolas/Mariano Moreno"
-      }else if(envio === "envio2"){
-        shipping = "Envio a Countries"
-      }else{
-        shipping = "Retiro en Tienda"
+      if (envio === "envio1") {
+        shipping = "Envio a San Nicolas/Mariano Moreno";
+      } else if (envio === "envio2") {
+        shipping = "Envio a Countries";
+      } else {
+        shipping = "Retiro en Tienda";
       }
       return {
         productId: p.id,
@@ -34,95 +35,124 @@ export default function SeleccionDePago() {
     const payload = {
       shipping,
       metodoDePago,
-      productos
-    }
-    dispatch(postOrden(payload))
+      productos,
+    };
+    dispatch(postOrden(payload));
   }
 
   const checkbox1 = document.getElementById("Efectivo");
   const checkbox2 = document.getElementById("Mercado Pago");
   const checkbox3 = document.getElementById("Transferencia");
-  
-  function getValue () {
-    if(checkbox1.checked === true){
-      metodoDePago = checkbox1.value
-    }if(checkbox2.checked === true){
-      metodoDePago = checkbox2.value
-    }if(checkbox3.checked === true){  
-      metodoDePago = checkbox3.value
-    }
-    
-  }
 
-  function uncheck(){
-    checkbox1.onclick = function(){
-    if(checkbox1.checked != false){
-       checkbox2.checked =null;
-       checkbox3.checked =null;
+  function getValue() {
+    if (checkbox1.checked === true) {
+      metodoDePago = checkbox1.value;
     }
-}
-checkbox2.onclick = function(){
-    if(checkbox2.checked != false){
-        checkbox1.checked=null;
-        checkbox3.checked =null;
+    if (checkbox2.checked === true) {
+      metodoDePago = checkbox2.value;
+    }
+    if (checkbox3.checked === true) {
+      metodoDePago = checkbox3.value;
     }
   }
 
-  checkbox3.onclick = function(){
-    if(checkbox3.checked != false){
-       checkbox2.checked =null;
-       checkbox1.checked =null;
-    }
-}
-}
+  function uncheck() {
+    checkbox1.onclick = function () {
+      if (checkbox1.checked != false) {
+        checkbox2.checked = null;
+        checkbox3.checked = null;
+      }
+    };
+    checkbox2.onclick = function () {
+      if (checkbox2.checked != false) {
+        checkbox1.checked = null;
+        checkbox3.checked = null;
+      }
+    };
 
-useEffect(() => {
-  setCarrito(JSON.parse(localStorage.getItem("carrito")));
-},[]);
+    checkbox3.onclick = function () {
+      if (checkbox3.checked != false) {
+        checkbox2.checked = null;
+        checkbox1.checked = null;
+      }
+    };
+  }
+
+  useEffect(() => {
+    setCarrito(JSON.parse(localStorage.getItem("carrito")));
+  }, []);
 
   return (
     <div>
-      <div>
-        <h2>
-        Selecion Del Metodo De Pago
-        </h2>
-      </div>
-      <div>
-        <label>
-          Efectivo <input id="Efectivo" type="radio" value="Efectivo" onClick={e => {uncheck()
-                                                                                    getValue()}}
-                                                                                    required />
-        </label>
+      <div className={style.banner}>
+        <div className={style.titulo}>
+          <h1>Metodo de pago</h1>
+        </div>
+        <img src={logo} />
       </div>
 
-      <div>
-        <label>
-          Mercado Pago <input id="Mercado Pago" type="radio" value="Mercado Pago" onClick={e => {uncheck()
-                                                                                                getValue()}}
-                                                                                                required />
-        </label>
+      <div className={style.card}>
+        <div className={style.contenido}>
+          <h2> Efectivo</h2>
+          <input
+            id='Efectivo'
+            type='radio'
+            value='Efectivo'
+            onClick={(e) => {
+              uncheck();
+              getValue();
+            }}
+            required
+          />
+        </div>
       </div>
 
-      <div>
-        <label>
-          Transferencia <input id="Transferencia" type="radio" value="Transferencia" onClick={e => {uncheck()
-                                                                                                    getValue()}}
-                                                                                                    required />
-        </label>
+      <div className={style.card}>
+        <div className={style.contenido}>
+          <h2>Mercado Pago</h2>
+          <input
+            id='Mercado Pago'
+            type='radio'
+            value='Mercado Pago'
+            onClick={(e) => {
+              uncheck();
+              getValue();
+            }}
+            required
+          />
+        </div>
       </div>
 
-      <div>
-        <br/>
-        <Link to="/envio">
-        <button>ATRÁS</button>
+      <div className={style.card}>
+        <div className={style.contenido}>
+          <h2> Transferencia</h2>
+
+          <input
+            id='Transferencia'
+            type='radio'
+            value='Transferencia'
+            onClick={(e) => {
+              uncheck();
+              getValue();
+            }}
+            required
+          />
+        </div>
+      </div>
+
+      <div className={style.footer}>
+        <Link to='/envio'>
+          <button>
+            <span>Atras</span>
+          </button>
         </Link>
-        <br/>
-        <br/>
-        <Link to="/formulario">
-        <button onClick={e => cartSubmit()}>SIGUIENTE</button>
+
+        <Link to='/formulario'>
+          <button>
+            <span>Siguiente</span>
+          </button>
         </Link>
       </div>
     </div>
-
-  )
+  );
 }

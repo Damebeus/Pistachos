@@ -116,14 +116,14 @@ function Cart() {
           <div className={style.footer}>
             <Link to='/listado'>
               <button>
-                <span>ATRÁS</span>
+                <span>Atras</span>
               </button>
             </Link>
 
             <div className={style.priceTotal}>Precio total: ${totalPrice}</div>
             <Link to='/envio'>
               <button>
-                <span>SIGUIENTE</span>
+                <span>Siguiente</span>
               </button>
             </Link>
           </div>

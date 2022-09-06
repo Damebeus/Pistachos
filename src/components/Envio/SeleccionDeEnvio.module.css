@@ -1,0 +1,80 @@
+@media screen and (max-width: 414px) {
+  .banner {
+    background-image: url("../ProductList/bgw.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0px 6px 15px 5px #000000;
+  }
+  .titulo {
+    display: flex;
+    justify-content: center;
+  }
+  .titulo h1 {
+    font-family: "Merienda", cursive;
+    font-size: 35px;
+    margin-top: 20px;
+    color: #fff;
+  }
+  .banner img {
+    text-align: center;
+    height: 125px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 5vh;
+    width: 100%;
+    bottom: 0;
+    background-image: url("../ProductList/bgw.jpg");
+    box-shadow: 0px -5px 15px 5px #000000;
+  }
+  .footer button {
+    background-color: transparent;
+    border: none;
+    color: azure;
+  }
+  .footer span {
+    color: #fff;
+    font-size: 20px;
+  }
+  .countries {
+    text-decoration: none;
+  }
+  .card {
+    background-color: #bebebe;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    height: 100px;
+    box-shadow: 3px 7px 15px 5px #000000;
+  }
+  .contenido {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .contenido h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .contenido h2 {
+    font-size: 17px;
+  }
+  .contenido button {
+    margin-bottom: 5px;
+  }
+
+  .total {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

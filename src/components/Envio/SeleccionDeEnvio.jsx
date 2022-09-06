@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-export default function SeleccionDeEnvio() {
+import style from "./SeleccionDeEnvio.module.css";
+import logo from "./logo.png";
 
+export default function SeleccionDeEnvio() {
   let [carrito, setCarrito] = useState();
   const [totalPrice, setTotalPrice] = useState(1);
   const [auxState, setAuxState] = useState("");
@@ -17,37 +19,68 @@ export default function SeleccionDeEnvio() {
     setCarrito(JSON.parse(localStorage.getItem("carrito")));
     handlePrice();
   }, [auxState]);
-  
+
   return (
     <div>
-
-      <Link to="/pago/envio1">
-        <div > 
-          <h3>Envio a San Nicolas y Mariano Moreno</h3>
-          <h3> $150 </h3>
+      <div className={style.banner}>
+        <div className={style.titulo}>
+          <h1>Modo de envio</h1>
         </div>
-      </Link>
+        <img src={logo} />
+      </div>
 
-      <Link to="/pago/envio2">
-        <div > 
+      <div className={style.card}>
+        <div className={style.contenido}>
+          <h3>San Nicolas y Mariano Moreno</h3>
+          <h2> $150 </h2>
+          <Link to='/pago/envio1'>
+            <button>
+              <span>Continuar</span>
+            </button>
+          </Link>
+        </div>
+      </div>
+      <div className={style.card}>
+        <div className={style.contenido}>
           <h3>Countries</h3>
-          <h3> $200 </h3>
+          <h2> $200 </h2>
+          <Link to='/pago/envio2'>
+            <button>
+              <span>Continuar</span>
+            </button>
+          </Link>
         </div>
-      </Link>
+      </div>
 
-      <Link to="/pago/retiro">
-        <div >
-          <div>
-            <h3>Retiro en Tienda</h3>
-            <h3> Gratis </h3>
-          </div>
+      <div className={style.card}>
+        <div className={style.contenido}>
+          <h3>Retiro en Tienda</h3>
+          <h2> Gratis </h2>
+          <Link to='/pago/retiro'>
+            <button>
+              <span>Continuar</span>
+            </button>
+          </Link>
         </div>
-      </Link>
+      </div>
 
-      <div > 
-      <h3>Pagás</h3>
-      <h3> $ {totalPrice} </h3>
+      {/* <div className={style.total}>
+        <h3>Precio actual</h3>
+        <h3> $ {totalPrice} </h3>
+      </div> */}
+      <div className={style.footer}>
+        <Link to='/cart'>
+          <button>
+            <span>Atras</span>
+          </button>
+        </Link>
+
+        <Link to='/listado'>
+          <button>
+            <span>Cancelar</span>
+          </button>
+        </Link>
       </div>
     </div>
-  )
+  );
 }
