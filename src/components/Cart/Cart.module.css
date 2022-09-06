@@ -116,4 +116,9 @@
     width: 100%;
     bottom: 0;
   }
+  .ternario {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
 }
