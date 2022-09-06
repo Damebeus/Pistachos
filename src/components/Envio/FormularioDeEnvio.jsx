@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector} from "react-redux";
-import { postEnvio} from "../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
+import { postEnvio } from "../../redux/action";
 import { Link } from "react-router-dom";
 import style from "./FormularioDeEnvio.module.css";
 
 export default function FormularioDeEnvio() {
+  const orden = useSelector((state) => state.orden);
 
-  const orden = useSelector((state) => state.orden)
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [input, setInput] = useState({
     manzana: "",
@@ -16,7 +15,7 @@ export default function FormularioDeEnvio() {
     barrio: "",
     telefono: "",
     nombreCompleto: "",
-    referencia:"",
+    referencia: "",
   });
 
   function handleChange(e) {
@@ -39,112 +38,109 @@ export default function FormularioDeEnvio() {
     } else {
       e.preventDefault();
       alert("Envio completado correctamente");
-      dispatch(postEnvio(input, orden.id))  
+      dispatch(postEnvio(input, orden.id));
       setInput({
         manzana: "",
         lote: "",
         barrio: "",
         telefono: "",
         nombreCompleto: "",
-        referencia:"",
+        referencia: "",
       });
     }
   }
 
   return (
-    <div>
-      <div className={style.bg}>
-        <br />
-        <br />
+    <div className={style.bg}>
+      <div className={style.banner}>
         <div className={style.titulo}>
-          <h1>Complete datos de envio</h1>
+          <h1>Datos de envio</h1>
         </div>
-        <div className={style.container}>
-          <form >
-            <div>
-              <p>Manzana:</p>
-              <input
-                type='text'
-                value={input.manzana}
-                name='manzana'
-                placeholder='Manzana'
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div>
-              <p>Lote:</p>
-              <input
-                type='nombreCompleto'
-                value={input.lote}
-                name='lote'
-                placeholder='Lote'
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div>
-              <p>Barrio:</p>
-              <input
-                type='text'
-                value={input.barrio}
-                name='barrio'
-                placeholder='Barrio'
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div>
-              <p>Telefono:</p>
-              <input
-                type='number'
-                value={input.telefono}
-                name='telefono'
-                placeholder='Telefono'
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div>
-              <p>Nombre Completo:</p>
-              <input
-                type='text'
-                value={input.nombreCompleto}
-                name='nombreCompleto'
-                placeholder='Nombre Completo'
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div>
-              <p>Referencia:</p>
-              <input
-                type='text'
-                value={input.referencia}
-                name='referencia'
-                placeholder='Opcional'
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className={style.btnC}>
-            </div>
-          </form>
-            <div>
-              <button onClick={(e) => handleSubmit(e)}>
-              <Link to={`/confirmacion/${orden.id}`}>
-                SIGUIENTE
-              </Link>
-              </button>
-            </div>
-          <div className={style.backBtn}>
-            <button>
-                <Link to={`/cart`}>Cancelar</Link>
-            </button>
-            </div>
-        </div>
-        <br />
-        <br />
       </div>
+      <div className={style.container}>
+        <form>
+          <div className={style.campos}>
+            <span>Barrio:</span>
+            <input
+              type='text'
+              value={input.barrio}
+              name='barrio'
+              placeholder='Barrio'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className={style.campos}>
+            <span>Manzana:</span>
+            <input
+              type='text'
+              value={input.manzana}
+              name='manzana'
+              placeholder='Manzana'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+
+          <div className={style.campos}>
+            <span>Lote:</span>
+            <input
+              type='nombreCompleto'
+              value={input.lote}
+              name='lote'
+              placeholder='Lote'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+
+          <div className={style.campos}>
+            <span>Telefono:</span>
+            <input
+              type='number'
+              value={input.telefono}
+              name='telefono'
+              placeholder='Telefono'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+
+          <div className={style.campos}>
+            <span>Nombre:</span>
+            <input
+              type='text'
+              value={input.nombreCompleto}
+              name='nombreCompleto'
+              placeholder='Nombre Completo'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+
+          <div className={style.campos}>
+            <span>Referencia:</span>
+            <input
+              type='text'
+              value={input.referencia}
+              name='referencia'
+              placeholder='Opcional'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className={style.btnC}></div>
+        </form>
+
+        <div className={style.footer}>
+          <Link to={`/cart`}>
+            <button>
+              <span>Cancelar</span>
+            </button>
+          </Link>
+          <Link to={`/confirmacion/${orden.id}`}>
+            <button onClick={(e) => handleSubmit(e)}>
+              <span> Siguiente</span>
+            </button>
+          </Link>
+        </div>
+      </div>
+      <br />
+      <br />
     </div>
   );
 }

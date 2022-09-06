@@ -1,0 +1,56 @@
+@media screen and (max-width: 414px) {
+  .banner {
+    background-image: url("../ProductList/bgw.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0px 6px 15px 5px #000000;
+  }
+  .titulo {
+    display: flex;
+    justify-content: center;
+  }
+  .titulo h1 {
+    font-family: "Merienda", cursive;
+    font-size: 35px;
+    margin-top: 20px;
+    color: #fff;
+  }
+
+  .campos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .campos input {
+    border-color: yellowgreen;
+  }
+  .campos span {
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 5vh;
+    width: 100%;
+    bottom: 0;
+    background-image: url("../ProductList/bgw.jpg");
+    box-shadow: 0px -5px 15px 5px #000000;
+  }
+  .footer button {
+    background-color: transparent;
+    border: none;
+    color: azure;
+  }
+  .footer span {
+    color: #fff;
+    font-size: 20px;
+  }
+}
