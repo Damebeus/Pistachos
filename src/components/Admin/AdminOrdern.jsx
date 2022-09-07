@@ -33,7 +33,7 @@ function AdminOrdern() {
         <AdminNav />
         <h1 className={styles.AdminH1}>Ordenes Creadas</h1>
         <div className={styles.ordenemiento}>
-          <h2 className={styles.AdminH2}>Ordenar por fechas</h2>
+          <h2 className={styles.AdminH2}>Ordenar por fechas </h2>
           <select onChange={(e) => handleSortAscending(e)}>
             <option>Select Order</option>
             <option value="asc">asc</option>
