@@ -1,0 +1,62 @@
+.divMain{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.divChil{
+    margin-top: 12px;
+    background-color: white;
+    width: 57%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 34px;
+}
+
+.orden{
+    display: flex;
+    width: 33.3%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.envio{
+    display: flex;
+    flex-direction: column;
+    width: 33.3%;
+}
+
+.productos{
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ordenemiento{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 56%;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./../Home/Welcome/bgw.jpg')
+}
+
+.AdminH1{
+    color: #e4e0e0;
+    font-size: 3.5rem;
+}
+
+.AdminH2{
+    color: #e4e0e0;
+    font-size: 1.5rem;
+    margin-right: 33px;
+}
