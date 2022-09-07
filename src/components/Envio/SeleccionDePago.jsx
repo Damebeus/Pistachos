@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { postOrden } from "../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
+import { putOrden } from "../../redux/action";
 import style from "./SeleccionDePago.module.css";
 import logo from "./logo.png";
 
 export default function SeleccionDePago() {
   const { envio } = useParams();
+
+  const orden = useSelector((state) => state.orden);
 
   let shipping = null;
 
@@ -17,7 +19,7 @@ export default function SeleccionDePago() {
   let [carrito, setCarrito] = useState();
 
   function cartSubmit() {
-    let productos = carrito.map((p) => {
+    let productos = carrito && carrito.map((p) => {
       if (envio === "envio1") {
         shipping = "Envio a San Nicolas/Mariano Moreno";
       } else if (envio === "envio2") {
@@ -37,7 +39,7 @@ export default function SeleccionDePago() {
       metodoDePago,
       productos,
     };
-    dispatch(postOrden(payload));
+    dispatch(putOrden(payload, orden));
   }
 
   const checkbox1 = document.getElementById("Efectivo");
@@ -148,7 +150,7 @@ export default function SeleccionDePago() {
         </Link>
 
         <Link to='/formulario'>
-          <button>
+          <button onClick={e => cartSubmit()}>
             <span>Siguiente</span>
           </button>
         </Link>

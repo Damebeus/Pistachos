@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./SeleccionDeEnvio.module.css";
 import logo from "./logo.png";
+import { postOrden } from "../../redux/action";
+import { useDispatch } from "react-redux";
 
 export default function SeleccionDeEnvio() {
   let [carrito, setCarrito] = useState();
   const [totalPrice, setTotalPrice] = useState(1);
   const [auxState, setAuxState] = useState("");
+  const dispatch = useDispatch()
 
   function handlePrice() {
     let aux = 0;
@@ -34,7 +37,7 @@ export default function SeleccionDeEnvio() {
           <h3>San Nicolas y Mariano Moreno</h3>
           <h2> $150 </h2>
           <Link to='/pago/envio1'>
-            <button>
+            <button onClick={e =>  dispatch(postOrden())}>
               <span>Continuar</span>
             </button>
           </Link>
@@ -45,7 +48,7 @@ export default function SeleccionDeEnvio() {
           <h3>Countries</h3>
           <h2> $200 </h2>
           <Link to='/pago/envio2'>
-            <button>
+            <button onClick={e =>  dispatch(postOrden())}>
               <span>Continuar</span>
             </button>
           </Link>
@@ -57,7 +60,7 @@ export default function SeleccionDeEnvio() {
           <h3>Retiro en Tienda</h3>
           <h2> Gratis </h2>
           <Link to='/pago/retiro'>
-            <button>
+            <button onClick={e =>  dispatch(postOrden())}>
               <span>Continuar</span>
             </button>
           </Link>

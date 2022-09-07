@@ -1,5 +1,6 @@
 import {
   POST_ORDEN,
+  PUT_ORDEN,
   GET_PROMO,
   GET_LOMO,
   GET_HAMBURGUESAS,
@@ -30,13 +31,20 @@ const InitialState = {
   promos: [],
   ordenes: [],
   orden:[],
-  envio:[],
+  envio:[]
 };
 
 export default function rootReducer(state = InitialState, action) {
   switch (action.type) {
 
     case POST_ORDEN:{
+      return {
+        ...state,
+        orden: action.payload,
+      }
+    }
+
+    case PUT_ORDEN:{
       return {
         ...state,
         orden: action.payload,
